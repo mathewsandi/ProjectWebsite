@@ -14,7 +14,7 @@
     </header>
 
     <div class="container">
-        <img src="http://i1206.photobucket.com/albums/bb455/IPenna/logo_zpsqgczya7y.png" align="top">
+        <img src="http://i1206.photobucket.com/albums/bb455/IPenna/logo_zpsqgczya7y.png" align="top";>
     </div>
 
 
@@ -30,13 +30,6 @@
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <div class="footer">
-
-       Copyright by Sezgi 2015.
-        @yield('footer')
-
-    </div>
-
 
 
 
@@ -51,19 +44,6 @@
         });</script>
 @yield('scripts')
 <style>
-    body{
-        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Background_zpsof0dbfpx.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: block;
-        color: #C20000;
-        width: 1920px;
-    }
-
-    .footer{
-        margin-top: 15%;
-    }
-
     .container img{
         text-align: center;
         border: none;
@@ -74,4 +54,13 @@
         margin-bottom: -175px;
 
     }
+    body{
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Background_zpsof0dbfpx.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        color: #C20000;
+    }
+
+
 </style>

@@ -14,12 +14,12 @@
                         <ul class="dropdown-menu">
                             <li><a href="/articles">All News</a></li>
                             <li><a href="/articles/create">Create News Article</a></li>
-                            <li><a href="#">Edit News Article</a></li>
-                            <li><a href="#">Delete News Article</a></li>
+                            <li><a href="/profilearticles">Edit or Delete News Article</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/admin"><span class="glyphicon glyphicon-lock"></span> Staff</a></li>
                     <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                     <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>

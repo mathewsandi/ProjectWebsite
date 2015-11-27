@@ -21,10 +21,22 @@
             Articles:
         </b>
         @foreach($articles as $article)
-            <h2> {{ $article->title }}</h2>
+            <article>
+                <h2>
+                    <a href="{{ action('ArticleController@show', [$article->id]) }}">{{ $article->title }}</a>
+                </h2>
 
-            <p>{{ $article->body }}</p>
+                <p>{{ $article->body }}</p>
+            </article>
         @endforeach
     </div>
 
 @endsection
+
+<style>
+    #content{
+        margin-left: 100px;
+        margin-right: 100px;
+        text-align: center;
+    }
+</style>

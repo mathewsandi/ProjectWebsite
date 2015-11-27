@@ -19,9 +19,10 @@ Route::controllers([
 ]);
 
 Route::resource('articles', 'ArticleController');
-//Resource saves us creating lots of lines of route code, will implement routes automatically from our controller.
 
 Route::get('profile', 'ProfileController@index');
 Route::get('profilearticles', 'ProfileController@articles');
 Route::get('profile/{id}', 'ProfileController@show');
 Route::patch('profile.profile/{id}', 'ProfileController@update');
+
+Route::get('admin', 'AdminController@index');

@@ -2,6 +2,15 @@
 
 use App\Article;
 use App\User;
+use Auth;
+use App\Http\Requests;
+use DB;
+use Illuminate\Support\Facades\Request;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Event;
 
 class HomeController extends Controller {
 
@@ -34,10 +43,10 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$articles = Article::latest()->published()->take(5)->get();
-
 		$latestUsers = User::orderBy('created_at', 'DESC')->take(5)->get();
+		$recentUsers = User::orderBy('updated_at', 'DESC')->take(5)->get();
 
-		return view('home', compact('articles', 'users', 'latestUsers'));
+		return view('home', compact('articles', 'users', 'latestUsers', 'recentUsers'));
 	}
 
 }
