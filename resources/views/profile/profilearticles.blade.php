@@ -11,11 +11,11 @@
 
         <b>
             Username:
-        </b> {{ $username }} <br>
+        </b><div class="text"> {{ $username }} <br></div>
 
         <b>
             Email:
-        </b> {{ $email }} <br>
+        </b><div class="text"> {{ $email }} <br></div>
 
         <b>
             Articles:
@@ -26,7 +26,7 @@
                     <a href="{{ action('ArticleController@show', [$article->id]) }}">{{ $article->title }}</a>
                 </h2>
 
-                <p>{{ $article->body }}</p>
+                <p><div class="text">{{ $article->body }}</p></div>
             </article>
         @endforeach
     </div>
@@ -38,5 +38,8 @@
         margin-left: 100px;
         margin-right: 100px;
         text-align: center;
+    }
+    .text{
+        color: whitesmoke;
     }
 </style>

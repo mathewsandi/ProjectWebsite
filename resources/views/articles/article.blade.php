@@ -5,7 +5,7 @@
         <h1>{{ $article->title  }}</h1>
         <h3>Written By: {{ $article->user->username }}</h3>
         <hr></hr>
-        <div class="body">
+        <div class="text">
             {{ $article->body }}
         </div>
         <div id="tags">
@@ -53,5 +53,8 @@
         line-height: 24px;
         font-weight: bold;
         color: red;
+    }
+    .text{
+        color: whitesmoke;
     }
 </style>

@@ -3,10 +3,23 @@
 @section('content')
 
     <div id="content">
-
-            <div>
-                <button type="submit">Update Roles</button>
+        <div class="form-group">
+            {!! Form::open(['route' => 'admin.store']) !!}
+            <div class="form-group">
+                {!! Form::label('username', 'Username:') !!}
+                {!! Form::text('username', null, ['class' => 'form-control']) !!}
             </div>
+
+            <div class="form-group">
+                {!! Form::label('role', 'Role:') !!}
+                {!! Form::text('role', null, ['class' => 'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::submit("Update Roles" , ['class' => 'btn btn-primary form-control']) !!}
+            </div>
+                {!! Form::close() !!}
+        </div>
     </div>
 
 @endsection
@@ -18,8 +31,7 @@
         margin: 10px;
     }
     .form-group{
-        margin-right: 300px;
-        margin-left: 300px;
+        margin-right: 600px;
         font-family: Tahoma, Geneva, sans-serif;
         font-size: 14px;
         font-style: italic;

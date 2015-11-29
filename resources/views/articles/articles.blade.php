@@ -12,7 +12,7 @@
                     <a href="{{ action('ArticleController@show', [$article->id]) }}">{{ $article->title }}</a>
                 </h2>
 
-                <p>{{ $article->body }}</p>
+                <p><div class="text">{{ $article->body }}</p></div>
             </article>
         @endforeach
 
@@ -25,5 +25,8 @@
     #content{
         margin-left: 100px;
         margin-right: 100px;
+    }
+    .text{
+        color: whitesmoke;
     }
 </style>

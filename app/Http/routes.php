@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('about', function(){
+	return view('about');
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -21,8 +24,15 @@ Route::controllers([
 Route::resource('articles', 'ArticleController');
 
 Route::get('profile', 'ProfileController@index');
+Route::get('editprofile', 'ProfileController@edit');
 Route::get('profilearticles', 'ProfileController@articles');
 Route::get('profile/{id}', 'ProfileController@show');
 Route::patch('profile.profile/{id}', 'ProfileController@update');
 
-Route::get('admin', 'AdminController@index');
+Route::resource('admin', 'AdminController');
+
+Route::get('chat', function() {
+	return view('chat');
+});
+
+Route::get('results', 'HomeController@search');

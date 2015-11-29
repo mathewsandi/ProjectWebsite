@@ -24,10 +24,17 @@ class ProfileController extends Controller
             $username = Auth::user()->username;
             $email = Auth::user()->email;
             $articlecount = Auth::user()->articles()->count();
+            $location = Auth::user()->location;
+            $minecraft = Auth::user()->minecraft;
+            $twitch = Auth::user()->twitch;
+            $youtube = Auth::user()->youtube;
+            $skype = Auth::user()->skype;
+            $about = Auth::user()->about;
             $user_id = Auth::id();
             $user = Auth::user();
 
-            return view('profile.profile', compact('username', 'email', 'articlecount', 'user_id', 'user'));
+            return view('profile.profile', compact('username', 'email', 'articlecount', 'user_id', 'user', 'location',
+                'minecraft', 'twitch', 'youtube', 'about', 'skype'));
         }
     }
 
@@ -35,8 +42,28 @@ class ProfileController extends Controller
     {
         $user = User::findOrFail($id);
         $articles = $user->articles;
+        $location = $user->location;
+        $minecraft = $user->minecraft;
+        $twitch = $user->twitch;
+        $youtube = $user->youtube;
+        $skype = $user->skype;
+        $about = $user->about;
 
-        return view('profile.profileshow', compact('user', 'articles'));
+        return view('profile.profileshow', compact('username', 'email', 'articles', 'user_id', 'user', 'location',
+            'minecraft', 'twitch', 'youtube', 'about', 'skype'));
+    }
+
+    public function edit(Request $request)
+    {
+        If (Auth::check()){
+            $username = Auth::user()->username;
+            $email = Auth::user()->email;
+            $articlecount = Auth::user()->articles()->count();
+            $user_id = Auth::id();
+            $user = Auth::user();
+
+            return view('profile.editprofile', compact('username', 'email', 'articlecount', 'user_id', 'user'));
+        }
     }
 
     public function update(Request $request, $user_id)
@@ -45,6 +72,12 @@ class ProfileController extends Controller
 
         $user->username = $request->get('username');
         $user->email = $request->get('email');
+        $user->location = $request->get('location');
+        $user->minecraft = $request->get('minecraft');
+        $user->youtube = $request->get('youtube');
+        $user->twitch = $request->get('twitch');
+        $user->skype = $request->get('skype');
+        $user->about = $request->get('about');
         $user->save();
         session()->flash('flash_message', 'You have updated your profile!');
         return redirect('/profile');

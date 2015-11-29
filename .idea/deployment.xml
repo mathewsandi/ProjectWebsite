@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData">
+  <component name="PublishConfigData" serverName="Sezgi">
     <serverData>
-      <paths name="ProjectWebsite">
+      <paths name="Sezgi">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="ProjectWebsite" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="WorkWebsite">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

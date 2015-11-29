@@ -6,8 +6,10 @@
             </div>
             <div>
                 <ul class="nav navbar-nav">
+
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
+
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">News
                             <span class="caret"></span></a>
@@ -17,10 +19,16 @@
                             <li><a href="/profilearticles">Edit or Delete News Article</a></li>
                         </ul>
                     </li>
+                    <form action="results" class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" name="search" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/admin"><span class="glyphicon glyphicon-lock"></span> Staff</a></li>
-                    <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                    <li><a href="/profile"><img src="{{ Gravatar::get(Auth::user()->email) }}" style="height:20px; width:20px; border-radius:50%;"> Profile</a></li>
                     <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>
             </div>
@@ -47,7 +55,7 @@
 
 <style>
     .navbar-default {
-        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Nav-Bar_zpsqqzceplp.png");
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Nav-bar_zpsx0qg17ng.png");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -56,16 +64,16 @@
         border-color: #bdbdbd;
     }
     .navbar-default .navbar-brand {
-        color: #676e70;
+        color: whitesmoke;
     }
     .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
         color: #808080;
     }
     .navbar-default .navbar-text {
-        color: #676e70;
+        color: whitesmoke;
     }
     .navbar-default .navbar-nav > li > a {
-        color: #676e70;
+        color: whitesmoke;
     }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
         color: #808080;

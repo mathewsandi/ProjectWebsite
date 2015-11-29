@@ -15,7 +15,7 @@
 
         <br>
         <h4><b>Instagram Feed:</b></h4>
-        <iframe src="http://widget.websta.me/in/mattjames_95/?r=1&w=3&h=3&b=1&p=5" allowtransparency="true" frameborder="0" scrolling="no" style="border:none;overflow:hidden;width:345px; height: 345px" ></iframe> <!-- websta - websta.me -->
+        <iframe src="http://snapwidget.com/bd/?u=cGVubmFkc2dufGlufDExNXwyfDN8fHllc3wyMHxmYWRlSW58b25TdGFydHx5ZXN8bm8=&ve=291115" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:274px; height:786px"></iframe>
     </div>
 
         <div class="center-column"">
@@ -30,7 +30,7 @@
                         <a href="{{ action('ArticleController@show', [$article->id]) }}">{{ $article->title }}</a>
                     </h2>
 
-                    <div class="body">{{ $article->body }}</div>
+                    <div class="text">{{ $article->body }}</div>
 
                 </article>
             @endforeach
@@ -39,65 +39,49 @@
     <div class="right-column">
         <h4><b>Latest Users: </b></h4>
         @foreach ($latestUsers as $latestUser)
-            <li>
+            <div class="text"><li>
                 {{ $latestUser->username }}
-            </li>
+            </li></div>
         @endforeach
         <br>
         <h4><b>Recent Online Users:</b></h4>
         @foreach ($recentUsers as $recentUser)
-            <li>
+            <div class="text"><li>
                 {{ $recentUser->username }}
-            </li>
+            </li></div>
         @endforeach
         <br>
-        <h4><b>Comment Box:</b></h4>
+        <a href="http://www.paypal.me/MathewJames"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitledd-3_zpsanflruqq.png" style="width: 210px;"></a>
+        <br>
+        <a href="http://www.twitter.com/PennaDSGN"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/twitter_zpsycx1xwwb.png"></a>
+        <a href="http://www.instagram.com/PennaDSGN"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Instagram_zpsbexqhtbo.png"></a>
     </div>
 
-
-    </div>
 
 @endsection
 <style>
     .left-column {
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        border: 1px solid #FFFFFF;
-        border: inset 1px solid #333;
-        -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
         float: left;
         width: 20%;
         padding: 5px 15px;
+        background-image: url("http://s1206.photobucket.com/user/IPenna/media/cacks_zps94vgmohx.png.html");
     }
     .right-column{
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        border: 1px solid #FFFFFF;
-        border: inset 1px solid #333;
-        -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
         float: left;
         width: 20%;
         padding: 5px 15px;
     }
     .center-column{
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        border: 1px solid #FFFFFF;
-        border: inset 1px solid #333;
-        -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
         width: 59%;
         float: left;
         padding: 5px 15px;
         margin: 0px 5px 5px 5px;
         text-align: center;
+    }
+    .body{
+        width: auto;
+    }
+    .text{
+        color: whitesmoke;
     }
 </style>

@@ -14,7 +14,7 @@
     </header>
 
     <div class="container">
-        <img src="http://i1206.photobucket.com/albums/bb455/IPenna/logo_zpsqgczya7y.png" align="top";>
+        <a href="http://s1206.photobucket.com/user/IPenna/media/Untitled-2_zpsms3r5uz8.png.html" target="_blank"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpsms3r5uz8.png" border="0" alt=" photo Untitled-2_zpsms3r5uz8.png"/></a>
     </div>
 
 
@@ -24,15 +24,14 @@
         @include('partials.flash')
 
         @yield('content')
+
         <br>
+
         @include('errors.list')
+
+
+        @include('partials.bottomnavbar')
     </div>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -50,15 +49,12 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-top: -190px;
-        margin-bottom: -175px;
 
     }
     body{
         background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Background_zpsof0dbfpx.png");
         background-repeat: no-repeat;
         background-size: cover;
-        display: block;
         color: #C20000;
     }
 

@@ -49,4 +49,12 @@ class HomeController extends Controller {
 		return view('home', compact('articles', 'users', 'latestUsers', 'recentUsers'));
 	}
 
+	public function search(Request $request)
+	{
+		$query = Request::input('search');
+		$articles = DB::table('articles')->where('body', 'LIKE', '%' . $query . '%')->paginate(10);
+
+		return view('results', compact('articles', 'query'));
+	}
+
 }
