@@ -6,10 +6,10 @@
         <h1>{{$user->username}}'s Profile!</h1>
         @if (Auth::check())
 
-            <img src="{{ Gravatar::get($user->email) }}" style="height:150px; width:150px; border-radius:100%;">
-
+            <img src="{{ Gravatar::get($user->email) }}" style="height:150px; width:150px; border-radius:100%;"><br>
         @endif
         <br>
+        @include('partials.follow-form')
         <hr/>
         <br>
 

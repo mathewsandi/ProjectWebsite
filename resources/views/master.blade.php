@@ -27,7 +27,7 @@
 
         <br>
 
-        @include('errors.list')
+
 
 
         @include('partials.bottomnavbar')

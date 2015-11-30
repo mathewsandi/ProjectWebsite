@@ -40,7 +40,7 @@
             <button type="submit">Register</button>
         </div>
     </form>
-
+    @include('errors.list')
 @endsection
 
 <style>

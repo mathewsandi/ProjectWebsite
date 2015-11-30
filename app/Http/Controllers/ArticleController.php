@@ -17,8 +17,8 @@ use App\Http\Requests\ArticleRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
-use DB;
 use Illuminate\Support\Facades\Request;
+use DB;
 
 class ArticleController extends Controller
 {

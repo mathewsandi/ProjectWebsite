@@ -22,6 +22,8 @@ Route::controllers([
 ]);
 
 Route::resource('articles', 'ArticleController');
+Route::resource('statuses', 'StatusController');
+Route::resource('admin', 'AdminController');
 
 Route::get('profile', 'ProfileController@index');
 Route::get('editprofile', 'ProfileController@edit');
@@ -29,10 +31,6 @@ Route::get('profilearticles', 'ProfileController@articles');
 Route::get('profile/{id}', 'ProfileController@show');
 Route::patch('profile.profile/{id}', 'ProfileController@update');
 
-Route::resource('admin', 'AdminController');
+Route::get('users', 'UserController@index');
 
-Route::get('chat', function() {
-	return view('chat');
-});
-
-Route::get('results', 'HomeController@search');
+Route::resource('follows', 'FollowController');

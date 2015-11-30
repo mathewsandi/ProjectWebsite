@@ -20,7 +20,7 @@ class ProfileController extends Controller
 
     public function index(Request $request)
     {
-        If (Auth::check()){
+        If (Auth::check()) {
             $username = Auth::user()->username;
             $email = Auth::user()->email;
             $articlecount = Auth::user()->articles()->count();
@@ -55,7 +55,7 @@ class ProfileController extends Controller
 
     public function edit(Request $request)
     {
-        If (Auth::check()){
+        If (Auth::check()) {
             $username = Auth::user()->username;
             $email = Auth::user()->email;
             $articlecount = Auth::user()->articles()->count();
@@ -85,7 +85,7 @@ class ProfileController extends Controller
 
     public function articles()
     {
-        if (Auth::check()){
+        if (Auth::check()) {
             $username = Auth::user()->username;
             $email = Auth::user()->email;
             $user_id = Auth::id();

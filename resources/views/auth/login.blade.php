@@ -24,7 +24,7 @@
             <button type="submit">Login</button>
         </div>
     </form>
-
+    @include('errors.list')
 @endsection
 
 <style>

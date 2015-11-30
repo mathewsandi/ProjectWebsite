@@ -4,7 +4,7 @@
             <div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/"><span class="glyphicon glyphicon-home"></span> </a></li>
-                    <li><a href="/chat"><span class="glyphicon glyphicon-envelope"></span> </a></li>
+                    <li><a href="/statuses"><span class="glyphicon glyphicon-envelope"></span> </a></li>
                     <li><a href="/notifications"><span class="glyphicon glyphicon-bell"></span> </a></li>
                     <li><a href="/events"><span class="glyphicon glyphicon-calendar"></span> </a></li>
                 </ul>

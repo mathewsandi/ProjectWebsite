@@ -3,19 +3,19 @@
 @section('content')
 
     <div id="content">
-        <div class="form-group">
+        <div class="group">
             {!! Form::open(['route' => 'admin.store']) !!}
-            <div class="form-group">
+            <div class="group">
                 {!! Form::label('username', 'Username:') !!}
                 {!! Form::text('username', null, ['class' => 'form-control']) !!}
             </div>
 
-            <div class="form-group">
+            <div class="group">
                 {!! Form::label('role', 'Role:') !!}
                 {!! Form::text('role', null, ['class' => 'form-control']) !!}
             </div>
 
-            <div class="form-group">
+            <div class="group">
                 {!! Form::submit("Update Roles" , ['class' => 'btn btn-primary form-control']) !!}
             </div>
                 {!! Form::close() !!}
@@ -30,7 +30,7 @@
         padding: 10px;
         margin: 10px;
     }
-    .form-group{
+    .group{
         margin-right: 600px;
         font-family: Tahoma, Geneva, sans-serif;
         font-size: 14px;

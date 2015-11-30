@@ -1,0 +1,1 @@
+<img class="media-object img-circle gravatar" src="{{ Gravatar::get($user->email, ['size'=> 70]) }}" alt="{{ $user->username }}">

@@ -13,9 +13,7 @@
             </b> <a href="/editprofile" class="btn btn-info" role="button">Edit Profile!</a>
         <br><br>
 
-        <b>
-            Articles:
-        </b> {{ $articlecount }} <a href="/profilearticles" class="btn btn-info" role="button">View Articles!</a><br><br>
+        <br>
 
         <b>
             Username:
@@ -66,6 +64,9 @@
         <br>
 
         <br>
+
+
+
     </div>
 
 @endsection

@@ -21,7 +21,7 @@
     </div></div>
     <br>
     @can('update', $article)
-    <div class="form-group">
+    <div class="group">
     {!! Form::model($article, ['method' => 'GET', 'action' => ['ArticleController@edit', $article->id]]) !!}
     {!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
     {!! Form::close() !!}
@@ -44,7 +44,7 @@
     #tags {
         text-align: left;
     }
-    .form-group{
+    .group{
         margin-right: 30%;
         margin-left: 30%;
         font-family: Tahoma, Geneva, sans-serif;

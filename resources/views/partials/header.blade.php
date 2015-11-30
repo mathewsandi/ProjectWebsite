@@ -9,7 +9,7 @@
 
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
-
+                    <li><a href="/users">Browse Users</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">News
                             <span class="caret"></span></a>
@@ -19,12 +19,6 @@
                             <li><a href="/profilearticles">Edit or Delete News Article</a></li>
                         </ul>
                     </li>
-                    <form action="results" class="navbar-form navbar-left">
-                        <div class="form-group">
-                            <input type="text" name="search" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/admin"><span class="glyphicon glyphicon-lock"></span> Staff</a></li>
