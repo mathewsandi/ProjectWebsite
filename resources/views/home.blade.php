@@ -2,13 +2,11 @@
 
 @section('content')
     <div class="body">
-    <h1 style="text-align: center">Welcome to the home page!</h1>
+    <h1 class="header" style="text-align: center">Welcome to the home page!</h1>
         <hr></hr>
         <br>
 
     <div class="left-column">
-        <h4><b>Latest Forum Posts:</b></h4>
-        <br>
         <h4><b>Twitter Feed:</b></h4>
         <a class="twitter-timeline" href="https://twitter.com/mathewj_" data-widget-id="670254159069884417">Tweets by @mathewj_</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -51,10 +49,10 @@
             </li></div>
         @endforeach
         <br>
-        <a href="http://www.paypal.me/MathewJames"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitledd-3_zpsanflruqq.png" style="width: 210px;"></a>
+        <a href="http://www.paypal.me/MathewJames"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Donate_zpsx2xbgxt0.png" style="width: 215px;"></a>
         <br>
-        <a href="http://www.twitter.com/PennaDSGN"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/twitter_zpsycx1xwwb.png"></a>
-        <a href="http://www.instagram.com/PennaDSGN"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Instagram_zpsbexqhtbo.png"></a>
+        <a href="http://www.twitter.com/PennaDSGN"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpsvwsoq5ra.png"></a>
+        <a href="http://www.instagram.com/PennaDSGN"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsd8ub2vn9.png"></a>
     </div>
 
 
@@ -81,7 +79,13 @@
     .body{
         width: auto;
     }
+    .header{
+        color: whitesmoke;
+    }
     .text{
         color: whitesmoke;
+    }
+    b{
+        color: #0077fb;
     }
 </style>

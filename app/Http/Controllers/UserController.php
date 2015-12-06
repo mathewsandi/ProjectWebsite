@@ -29,8 +29,16 @@ class UserController extends Controller
 
     public function index()
     {
+        $not_friends = User::where('id', '!=', Auth::user()->id);
+        if (Auth::user()->friends->count()) {
+            $not_friends->whereNotIn('id', Auth::user()->friends->modelKeys());
+        }
+        $not_friends = $not_friends->get();
         $users = User::orderBy('id', 'ASC')->get();
-        return view ('users', compact('users'));
+        return view('users', compact('users'))->with('not_friends', $not_friends);
+
+
+//        return view ('users', compact('users'));
     }
 
 

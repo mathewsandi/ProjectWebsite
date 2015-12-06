@@ -3,7 +3,7 @@
 @section('content')
 
     <div id="content" style="text-align: center">
-        <h1>Articles</h1>
+        <h1 class="header">Articles</h1>
 
         <hr></hr>
         @foreach($articles as $article)
@@ -17,7 +17,7 @@
         @endforeach
 
         {!!  $articles->render() !!}
-    </div>
+
 
 
 @endsection
@@ -27,6 +27,9 @@
         margin-right: 100px;
     }
     .text{
+        color: whitesmoke;
+    }
+    .header{
         color: whitesmoke;
     }
 </style>

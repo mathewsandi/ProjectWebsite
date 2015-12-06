@@ -80,5 +80,7 @@
     .text{
         color: whitesmoke;
     }
-
+    b{
+        color: whitesmoke;
+    }
 </style>

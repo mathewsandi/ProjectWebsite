@@ -9,6 +9,7 @@
 
                     <li class="active"><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
+                    <li><a href="http://sezgi.bbforum.co/">Forum</a></li>
                     <li><a href="/users">Browse Users</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">News
@@ -49,7 +50,7 @@
 
 <style>
     .navbar-default {
-        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Nav-bar_zpsx0qg17ng.png");
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Nav-bar_zpswcylvcqi.png");
         background-repeat: no-repeat;
         background-size: cover;
     }

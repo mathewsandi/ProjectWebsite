@@ -3,21 +3,21 @@
 @section('content')
 
     <div id="content">
-        <h1>
+        <h1 class="header">
             {{ $username }}'s Articles!
         </h1>
         <hr></hr>
         <br>
 
-        <b>
+        <b class="header">
             Username:
         </b><div class="text"> {{ $username }} <br></div>
 
-        <b>
+        <b class="header">
             Email:
         </b><div class="text"> {{ $email }} <br></div>
 
-        <b>
+        <b class="header">
             Articles:
         </b>
         @foreach($articles as $article)
@@ -41,5 +41,8 @@
     }
     .text{
         color: whitesmoke;
+    }
+    .header{
+        color: #0077fb;
     }
 </style>

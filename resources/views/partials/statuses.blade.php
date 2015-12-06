@@ -6,7 +6,7 @@
         <h4 class="media-heading">
             {{ $status->user->username }}
         </h4>
-        <p>{{ $status->created_at->diffForHumans() }}</p>
+        <p class="lastposted">{{ $status->created_at->diffForHumans() }}</p>
         <p class="status-body">{{ $status->body }}</p>
     </div>
 </article>
@@ -20,5 +20,11 @@
     }
     .status-body{
         color: whitesmoke;
+    }
+    .media-heading{
+        color: #0077fb;
+    }
+    .lastposted{
+        color: #0077fb;
     }
 </style>

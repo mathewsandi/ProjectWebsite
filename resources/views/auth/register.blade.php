@@ -68,7 +68,7 @@
         font-style: italic;
         line-height: 24px;
         font-weight: bold;
-        color: red;
+        color: #0077fb;
         text-decoration: none;
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;

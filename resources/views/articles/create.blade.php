@@ -3,7 +3,7 @@
 @section('content')
 
     <div id="content">
-        <h1>Write a new Article</h1>
+        <h1 class="header">Write a new Article</h1>
         <hr/>
     </div>
     <div class="group">
@@ -29,7 +29,9 @@
                 font-style: italic;
                 line-height: 24px;
                 font-weight: bold;
-                color: red;
+                color: whitesmoke;
             }
-
+            .header{
+                color: whitesmoke;
+            }
         </style>

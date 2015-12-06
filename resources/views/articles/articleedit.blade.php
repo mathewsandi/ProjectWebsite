@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="content">
-    <h1>Edit: {!! $article->title !!}</h1>
+    <h1 class="header">Edit: {!! $article->title !!}</h1>
 
     <hr/>
     <br><br><br><br><br>
@@ -58,6 +58,9 @@
         font-style: italic;
         line-height: 24px;
         font-weight: bold;
-        color: red;
+        color: whitesmoke;
+    }
+    .header{
+        color: whitesmoke;
     }
 </style>

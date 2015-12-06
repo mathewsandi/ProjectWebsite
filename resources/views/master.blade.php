@@ -14,7 +14,7 @@
     </header>
 
     <div class="container">
-        <a href="http://s1206.photobucket.com/user/IPenna/media/Untitled-2_zpsms3r5uz8.png.html" target="_blank"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpsms3r5uz8.png" border="0" alt=" photo Untitled-2_zpsms3r5uz8.png"/></a>
+        <a href="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpshndu8ykr.png" target="_blank"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpshndu8ykr.png" border="0" alt=" photo Untitled-2_zpshndu8ykr.png"/></a>
     </div>
 
 
@@ -52,7 +52,7 @@
 
     }
     body{
-        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Background_zpsof0dbfpx.png");
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Background_zpstehxmkxr.png");
         background-repeat: no-repeat;
         background-size: cover;
         color: #C20000;

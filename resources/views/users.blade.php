@@ -2,27 +2,30 @@
 
 @section('content')
 <br>
-    @foreach ($users->chunk(4) as $userSet)
-        <div class="row users">
-        @foreach ($userSet as $user)
-            <div class="col-md-3 user-block">
-                @include('partials.gravatar')
-                <h4 class="user-block-username">
-                    {{ $user->username }}
-                </h4>
-            </div>
+    <div class="rows">
+        @foreach (Auth::user()->friends as $friend)
+            <tr>
+                <td><a href="{{ action('ProfileController@show', [$friend->id]) }}"><img class="media-object img-circle gravatar" src="{{ Gravatar::get($friend->email, ['size'=> 70]) }}" alt="{{ $friend->username }}"></a></td>
+                <td><a href="{{ action('ProfileController@getRemoveFriend', [$friend->id]) }}">Unfollow {{$friend->username}}</a></td>
+            </tr>
+        @endforeach
+
+
+<br><br><br><br><br>
+
+    @foreach ($not_friends as $friend)
+        <tr>
+            <td><a href="{{ action('ProfileController@show', [$friend->id]) }}"> <img class="media-object img-circle gravatar" src="{{ Gravatar::get($friend->email, ['size'=> 70]) }}" alt="{{ $friend->username }}"></a></td>
+            <td><a href="{{ action('ProfileController@getAddFriend', [$friend->id]) }}">Follow {{$friend->username}}</a></td>
+        </tr>
         @endforeach
         </div>
-    @endforeach
-
 @endsection
 
 <style>
-    .users {
-        margin-bottom: 3em;
-    }
-    .user-block{
+    .rows {
         text-align: center;
+        color: #0077fb;
     }
     .gravatar{
         margin: auto;

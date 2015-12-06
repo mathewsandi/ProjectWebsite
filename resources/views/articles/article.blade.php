@@ -2,8 +2,8 @@
 @section('content')
 
     <div id="content">
-        <h1>{{ $article->title  }}</h1>
-        <h3>Written By: {{ $article->user->username }}</h3>
+        <h1 class="header">{{ $article->title  }}</h1>
+        <h3 class="header">Written By: {{ $article->user->username }}</h3>
         <hr></hr>
         <div class="text">
             {{ $article->body }}
@@ -52,9 +52,12 @@
         font-style: italic;
         line-height: 24px;
         font-weight: bold;
-        color: red;
+        color: whitesmoke;
     }
     .text{
+        color: whitesmoke;
+    }
+    .header{
         color: whitesmoke;
     }
 </style>

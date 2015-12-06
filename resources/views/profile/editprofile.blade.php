@@ -63,7 +63,7 @@
         font-style: italic;
         line-height: 24px;
         font-weight: bold;
-        color: red;
+        color: whitesmoke;
     }
 
 </style>

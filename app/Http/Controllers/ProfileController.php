@@ -7,9 +7,10 @@
  */
 
 namespace app\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-Use App\User;
+use App\User;
 
 class ProfileController extends Controller
 {
@@ -93,5 +94,21 @@ class ProfileController extends Controller
 
             return view('profile.profilearticles', compact('username', 'email', 'user_id', 'articles'));
         }
+    }
+
+    public function getAddFriend($id)
+    {
+        $user = User::findOrFail($id);
+        Auth::user()->addFriend($user);
+        session()->flash('flash_message', 'Successfully followed user!');
+        return Redirect('/users');
+    }
+
+    public function getRemoveFriend($id)
+    {
+        $user = User::find($id);
+        Auth::user()->removeFriend($user);
+        session()->flash('flash_message', 'Successfully Unfollowed User!');
+        return Redirect('/users');
     }
 }

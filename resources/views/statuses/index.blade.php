@@ -17,6 +17,10 @@
                 {!!  Form::close() !!}
             </div>
 
+        <div class="col-md-3 col-md-offset-1">
+            {{$status_count}} Posts!
+        </div>
+
         <div class="col-md-6 col-md-offset-3">
         @foreach($statuses as $status)
             @include('partials.statuses')

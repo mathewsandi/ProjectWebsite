@@ -6,7 +6,7 @@
                     <li><a href="/"><span class="glyphicon glyphicon-home"></span> </a></li>
                     <li><a href="/statuses"><span class="glyphicon glyphicon-envelope"></span> </a></li>
                     <li><a href="/notifications"><span class="glyphicon glyphicon-bell"></span> </a></li>
-                    <li><a href="/events"><span class="glyphicon glyphicon-calendar"></span> </a></li>
+                    <li><a href="/gallery"><span class="glyphicon glyphicon-film"></span> </a></li>
                 </ul>
             </div>
         </div>

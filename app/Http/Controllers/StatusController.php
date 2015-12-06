@@ -29,9 +29,10 @@ class StatusController extends Controller
 
     public function index()
     {
+        $status_count = Auth::user()->statuses->count();
         $statuses = Status::latest()->get();
 
-        return view('statuses.index', compact('statuses', 'profile', 'writers'));
+        return view('statuses.index', compact('statuses', 'status_count', 'friends'));
     }
 
     public function store(StatusRequest $request)

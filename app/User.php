@@ -52,36 +52,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	}
 
 	/**
-	 * Get the list of users that the current user follows.
-	 *
-	 * @return mixed
-	 */
-	public function followedUsers()
-	{
-		return $this->belongsToMany(static::class, 'follows', 'follower_id', 'followed_id')->withTimestamps();
-	}
-	/**
-	 * Get the list of users who follow the current user.
-	 *
-	 * @return mixed
-	 */
-	public function followers()
-	{
-		return $this->belongsToMany(static::class, 'follows', 'followed_id', 'follower_id')->withTimestamps();
-	}
-	/**
-	 * Determine if current user follows another user.
-	 *
-	 * @param User $otherUser
-	 * @return bool
-	 */
-	public function isFollowedBy(User $otherUser)
-	{
-		$idsWhoOtherUserFollows = $otherUser->followedUsers()->lists('followed_id');
-		return in_array($this->id, $idsWhoOtherUserFollows);
-	}
-
-	/**
 	 * Get the roles a user has
 	 *
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -154,7 +124,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 		$this->roles()->attach($assigned_roles);
 	}
-}
 
 /* First we have a function that determines if someone is staff.
 Then the next function that when given a role it will determine if the user has that particular capability.
@@ -162,3 +131,20 @@ The next function is a helper function that will return the id number of the val
 The last function allows you to pass the title the person should have. Each title will corresponding with a certain
 group of permissions. Each permission set build on each other so the title with the most permissions has to be at
 the top of the switch statement. */
+
+	public function friends()
+	{
+		return $this->belongsToMany('App\User', 'friends_users', 'user_id', 'friend_id');
+	}
+
+	public function addFriend(User $user)
+	{
+		$this->friends()->attach($user->id);
+	}
+
+	public function removeFriend(User $user)
+	{
+		$this->friends()->detach($user->id);
+	}
+
+}
