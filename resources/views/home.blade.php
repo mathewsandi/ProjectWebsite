@@ -8,9 +8,8 @@
 
     <div class="left-column">
         <h4><b>Twitter Feed:</b></h4>
-        <a class="twitter-timeline" href="https://twitter.com/mathewj_" data-widget-id="670254159069884417">Tweets by @mathewj_</a>
+        <a class="twitter-timeline" href="https://twitter.com/SezgiCraft" data-widget-id="673981711718436865">Tweets by @SezgiCraft</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
         <br>
         <h4><b>Instagram Feed:</b></h4>
         <iframe src="http://snapwidget.com/bd/?u=cGVubmFkc2dufGlufDExNXwyfDN8fHllc3wyMHxmYWRlSW58b25TdGFydHx5ZXN8bm8=&ve=291115" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:274px; height:786px"></iframe>
