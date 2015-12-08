@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use DB;
+use App\Point;
 
 class ArticleController extends Controller
 {
@@ -59,7 +60,9 @@ class ArticleController extends Controller
         $article->save();
         $article->tags()->attach($request->input('tag_list'));
         Auth::user()->articles()->save($article);
-
+        $points = $user->points;
+        $user->points = $points + 2;
+        $user->save();
 
         session()->flash('flash_message', 'Article Created!');
         return redirect('/articles');

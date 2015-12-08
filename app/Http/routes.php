@@ -36,3 +36,4 @@ Route::get('add-friend/{id}', 'ProfileController@getAddFriend');
 Route::get('remove-friend/{id}', 'ProfileController@getRemoveFriend');
 
 Route::get('users', 'UserController@index');
+Route::get('store', 'StoreController@index');

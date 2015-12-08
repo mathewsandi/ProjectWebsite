@@ -147,4 +147,14 @@ the top of the switch statement. */
 		$this->friends()->detach($user->id);
 	}
 
+	/**
+	 * A user can have many points
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+	public function points()
+	{
+		return $this->hasMany('App\Point');
+	}
+
 }

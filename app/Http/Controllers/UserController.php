@@ -36,9 +36,6 @@ class UserController extends Controller
         $not_friends = $not_friends->get();
         $users = User::orderBy('id', 'ASC')->get();
         return view('users', compact('users'))->with('not_friends', $not_friends);
-
-
-//        return view ('users', compact('users'));
     }
 
 
