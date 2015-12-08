@@ -9,14 +9,21 @@
         <p class="lastposted">{{ $status->created_at->diffForHumans() }}</p>
         <p class="status-body">{{ $status->body }}</p>
     </div>
+
 </article>
 
 <style>
-    .media{
-        border: 1px solid #e3e3e3;
+    .media {
         background: transparent;
         padding: 1em;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2lll_zpslz4u6fac.png");
+        background-color: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-box-shadow: 0 10px 6px -6px #000000;
+        -moz-box-shadow: 0 10px 6px -6px #000000;
+        box-shadow: 0 10px 6px -6px #000000;
     }
     .status-body{
         color: whitesmoke;
