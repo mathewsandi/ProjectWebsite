@@ -7,16 +7,16 @@
         <br>
 
     <div class="left-column">
-        <h4><b>Twitter Feed:</b></h4>
+        <h4 class="box"><b>Twitter Feed:</b></h4>
         <a class="twitter-timeline" href="https://twitter.com/SezgiCraft" data-widget-id="673981711718436865">Tweets by @SezgiCraft</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         <br>
-        <h4><b>Instagram Feed:</b></h4>
+        <h4 class="box"><b>Instagram Feed:</b></h4>
         <script src="http://snapwidget.com/js/snapwidget.js"></script>
         <iframe src="http://snapwidget.com/in/?u=cGVubmFkc2dufGlufDE3MHwyfDN8fHllc3w1fGZhZGVJbnxvblN0YXJ0fHllc3x5ZXM=&ve=091215" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>    </div>
 
         <div class="center-column"">
-            <h4>
+            <h4 class="box">
                 <b>
                     Latest News!
                 </b>
@@ -34,14 +34,14 @@
         </div>
 
     <div class="right-column">
-        <h4><b>Latest Users: </b></h4>
+        <h4 class="box"><b>Latest Users: </b></h4>
         @foreach ($latestUsers as $latestUser)
             <div class="text"><li>
                 {{ $latestUser->username }}
             </li></div>
         @endforeach
         <br>
-        <h4><b>Recent Online Users:</b></h4>
+        <h4 class="box"><b>Recent Online Users:</b></h4>
         @foreach ($recentUsers as $recentUser)
             <div class="text"><li>
                 {{ $recentUser->username }}
@@ -86,5 +86,17 @@
     }
     b{
         color: #0077fb;
+    }
+    .box {
+        background: #0000C2;
+        height: 75px;
+        padding: 28px;
+        text-align: center;
+        -webkit-box-shadow: 0 10px 6px -6px #000000;
+        -moz-box-shadow: 0 10px 6px -6px #000000;
+        box-shadow: 0 10px 6px -6px #000000;
+        -moz-box-shadow: inset 0 0 10px #000000;
+        -webkit-box-shadow: inset 0 0 10px #000000;
+        box-shadow: inset 0 0 10px #000000;
     }
 </style>

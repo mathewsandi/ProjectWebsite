@@ -8,13 +8,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Request;
 use App\User;
-use Gate;
-use App\Tag;
-use Illuminate\Http\Request;
-use App\Role;
-
+use Illuminate\Support\Facades\Input;
 
 class AdminController extends Controller
 {
@@ -25,6 +22,13 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin/panel');
+        $user = Auth::user();
+        if ($user->hasRole('admin' or 'super_admin')) {
+            return view('admin.panel');
+        }
+    }
+
+    public function store(Request $request)
+    {
     }
 }
