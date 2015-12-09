@@ -2,7 +2,14 @@
 <project version="4">
   <component name="PublishConfigData" serverName="ProjectWebsite">
     <serverData>
-      <paths name="ProjectWebsite">
+      <paths name="Sezgi">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="WorkWebsite">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

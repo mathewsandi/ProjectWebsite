@@ -23,7 +23,7 @@
         @foreach($articles as $article)
             <article>
                 <h2>
-                    <a href="{{ action('ArticleController@show', [$article->id]) }}">{{ $article->title }}</a>
+                    <a href="{{ action('ArticleController@show', [$article->id]) }}" style="text-decoration: none; color: #0077fb;">{{ $article->title }}</a>
                 </h2>
 
                 <p><div class="text">{{ $article->body }}</p></div>

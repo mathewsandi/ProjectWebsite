@@ -1,7 +1,12 @@
 @extends ('master')
 
 @section('content')
-
+    <div id="pic">
+        <img src="http://i1206.photobucket.com/albums/bb455/IPenna/1_zpsdvddkr4h.png">
+    </div>
+    <div id="pic1">
+        <img src="http://i1206.photobucket.com/albums/bb455/IPenna/2_zpsbic8cthm.png">
+    </div>
     <div id="content">
         <h1 class="header">{{$user->username}}'s Profile!</h1>
         @if (Auth::check())
@@ -11,6 +16,7 @@
         <br>
         <b>
         </b>
+
         <hr/>
         <br>
 
@@ -76,5 +82,17 @@
     }
     b{
         color: whitesmoke;
+    }
+    #pic{
+        left: 30%;
+        position: absolute;
+        right:auto;
+        bottom: 37%;
+    }
+    #pic1{
+        margin-left: 60%;
+        right: auto;
+        position: absolute;
+        bottom: 37%;
     }
 </style>

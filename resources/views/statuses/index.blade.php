@@ -18,7 +18,7 @@
             </div>
         <div class="col-md-3 posts">
             <div id="text">
-                <p>{{$status_count}} Posts!</p>
+                <b><p>{{$status_count}}<br/> Posts!</p></b>
             </div>
 
         </div>
@@ -44,29 +44,28 @@
         color: red;
     }
     .posts{
-        top: -200px;
+        top: -175px;
         text-align: center;
         padding: 1em;
         margin-left: 5px;
         height: 40%;
-        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-3_zpsts94zcdx.png");
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsnw4qcdqu.png");
         background-repeat: no-repeat;
-        background-size: cover;
         position: relative;
         text-align: center;
     }
 
     #text{
+        bottom: 18%;
         position: absolute;
-        bottom: 22%;
-        text-align: center;
         font-size:60px;
         font-style: oblique;
-        left: 27%;
+        left: 28%;
         color: whitesmoke;
-        font-family: Lato;
+        font-family: "Gill Sans MT";
+        color: #000000;
     }
     .statuses{
-        margin-top: -20%;
+        margin-top: -18%;
     }
 </style>

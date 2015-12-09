@@ -43,6 +43,7 @@
     }
     #tags {
         text-align: left;
+        color: whitesmoke;
     }
     .group{
         margin-right: 30%;

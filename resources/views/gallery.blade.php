@@ -44,14 +44,13 @@
 @stop
 
 <style>
-    .floated_img{
-        text-align: center;
-    }
     #myCarousel{
-        width: 100%;
+        /width: 100%;
+        margin-right: auto;
+        margin-left: auto;
     }
     .carousel-inner{
-        left:23%;
-        right:auto;
+        right:19%;
+        left: 19%;
     }
 </style>

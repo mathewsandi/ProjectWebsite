@@ -3,7 +3,6 @@
 @section('content')
     <div class="body">
     <h1 class="header" style="text-align: center">Welcome to the home page!</h1>
-        <hr></hr>
         <br>
 
     <div class="left-column">
@@ -24,7 +23,7 @@
             @foreach($articles as $article)
                 <article>
                     <h2>
-                        <a href="{{ action('ArticleController@show', [$article->id]) }}">{{ $article->title }}</a>
+                        <b><a href="{{ action('ArticleController@show', [$article->id]) }}" style="text-decoration: none; color: #0077fb;">{{ $article->title }}</a></b>
                     </h2>
 
                     <div class="text">{{ $article->body }}</div>
@@ -48,10 +47,10 @@
             </li></div>
         @endforeach
         <br>
-        <a href="http://paypal.me/Mathew858"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Donate_zpsx2xbgxt0.png" style="width: 215px;"></a>
+        <a href="http://paypal.me/Mathew858"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/donate_zpsxli6ltva.png" style="width: 155px;"></a>
         <br>
-        <a href="http://www.twitter.com/PennaDSGN"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpsvwsoq5ra.png"></a>
-        <a href="http://www.instagram.com/PennaDSGN"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsd8ub2vn9.png"></a>
+        <a href="http://www.twitter.com/PennaDSGN"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/twitter_zpsuvsmnsao.png"></a>
+        <a href="http://www.instagram.com/PennaDSGN"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/insta_zps3kusskop.png"></a>
     </div>
 
 
@@ -85,18 +84,19 @@
         color: whitesmoke;
     }
     b{
-        color: #0077fb;
+        color: whitesmoke;
     }
     .box {
-        background: #0000C2;
         height: 75px;
         padding: 28px;
         text-align: center;
+        margin-bottom: 1em;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2lll_zpslz4u6fac.png");
+        background-color: inherit;
+        background-repeat: no-repeat;
+        background-size: cover;
         -webkit-box-shadow: 0 10px 6px -6px #000000;
         -moz-box-shadow: 0 10px 6px -6px #000000;
         box-shadow: 0 10px 6px -6px #000000;
-        -moz-box-shadow: inset 0 0 10px #000000;
-        -webkit-box-shadow: inset 0 0 10px #000000;
-        box-shadow: inset 0 0 10px #000000;
     }
 </style>
