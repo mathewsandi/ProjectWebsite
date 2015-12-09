@@ -46,6 +46,9 @@ class StatusController extends Controller
         if($user->statuses->count() < 1)
         {
             $this->welcome($user);
+            $points = $user->points;
+            $user->points = $points + 2;
+            $user->save();
         }
         $status = new Status($request->all());
         $status->user_id = $user->id;
