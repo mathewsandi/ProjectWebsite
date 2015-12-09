@@ -16,17 +16,18 @@
                 </div>
                 {!!  Form::close() !!}
             </div>
-        <div class="image">
-            <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-3_zpsts94zcdx.png">
-        </div>
         <div class="col-md-3 posts">
-            {{$status_count}} Posts!
+            <div id="text">
+                <p>{{$status_count}} Posts!</p>
+            </div>
+
         </div>
 
         <div class="col-md-6 col-md-offset-3 statuses">
         @foreach($statuses as $status)
             @include('partials.statuses')
         @endforeach
+            {!! $statuses->render() !!}
         </div>
     </div>
 @stop
@@ -48,11 +49,24 @@
         padding: 1em;
         margin-left: 5px;
         height: 40%;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-3_zpsts94zcdx.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+    }
+
+    #text{
+        position: absolute;
+        bottom: 22%;
+        text-align: center;
+        font-size:60px;
+        font-style: oblique;
+        left: 27%;
+        color: whitesmoke;
+        font-family: Lato;
     }
     .statuses{
         margin-top: -20%;
-    }
-    .image{
-        margin-top: -250px;
     }
 </style>

@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'postmaster@sandboxdcc3c6bbe087401bb794bf9d061666d7.mailgun.org', 'name' => 'Sezgi Official'],
 
     /*
     |--------------------------------------------------------------------------

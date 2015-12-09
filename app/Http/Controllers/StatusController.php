@@ -15,11 +15,9 @@ use App\Tag;
 use App\Status;
 use App\Http\Requests;
 use App\Http\Requests\StatusRequest;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 use DB;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Mail;
 
 class StatusController extends Controller
 {
@@ -37,7 +35,7 @@ class StatusController extends Controller
         foreach($friend_id as $value){
             array_push($friends, $value->friend_id);
         }
-        $statuses = Status::whereIn('user_id', $friends)->orWhere('user_id', $user_id)->orderBy('created_at', 'DESC')->get();
+        $statuses = Status::whereIn('user_id', $friends)->orWhere('user_id', $user_id)->orderBy('created_at', 'DESC')->Paginate(10);
 
         return view('statuses.index', compact('statuses', 'status_count', 'friend_id'));
     }
@@ -45,11 +43,32 @@ class StatusController extends Controller
     public function store(StatusRequest $request)
     {
         $user = Auth::user();
+        if($user->statuses->count() < 1)
+        {
+            $this->welcome($user);
+        }
         $status = new Status($request->all());
         $status->user_id = $user->id;
         $status->save();
 
         session()->flash('flash_message', 'Status Posted!');
         return redirect('/statuses');
+    }
+
+    public function sendTo($user, $subject, $view, $data = [])
+    {
+        Mail::send($view, $data, function($message) use($user, $subject)
+        {
+            $message->to($user->email)
+                ->subject($subject);
+        });
+    }
+    public function welcome(User $user)
+    {
+        $view = 'emails.welcome';
+        $data = [];
+        $subject = 'Welcome to Sezgi!';
+
+        return $this->sendTo($user, $subject, $view, $data);
     }
 }
