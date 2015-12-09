@@ -65,9 +65,9 @@ class StatusController extends Controller
     }
     public function welcome(User $user)
     {
-        $view = 'emails.welcome';
+        $view = 'emails.firststatus';
         $data = [];
-        $subject = 'Welcome to Sezgi!';
+        $subject = 'You posted your first status!';
 
         return $this->sendTo($user, $subject, $view, $data);
     }
