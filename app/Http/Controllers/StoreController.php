@@ -40,8 +40,9 @@ class StoreController extends Controller
         $name = $product->item;
         $info = $product->information;
         $price = $product->price;
+        $url = $product->url;
 
-        return view('store.item', compact('info', 'price', 'name'));
+        return view('store.item', compact('info', 'price', 'name', 'url'));
 //        $user = User::findOrFail($id);
 //        $articles = $user->articles;
 //        $location = $user->location;
