@@ -2,8 +2,7 @@
 
 @section('content')
 <br><br>
-    <div class="body">
-
+    <div class="row">
         @include('errors.list')
             <div class="status">
                 {!! Form::open(['route' => 'statuses.store']) !!}
@@ -16,14 +15,14 @@
                 </div>
                 {!!  Form::close() !!}
             </div>
-        <div class="col-md-3 posts">
+        <div class="col-md-3 col-sm-3 posts">
             <div id="text">
                 <b><p>{{$status_count}}<br/> Posts!</p></b>
             </div>
 
         </div>
 
-        <div class="col-md-6 col-md-offset-3 statuses">
+        <div class="col-md-6 col-sm-6 col-md-offset-3 statuses">
         @foreach($statuses as $status)
             @include('partials.statuses')
         @endforeach
@@ -45,8 +44,6 @@
     }
     .posts{
         top: -175px;
-        text-align: center;
-        padding: 1em;
         margin-left: 5px;
         height: 40%;
         background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsnw4qcdqu.png");
@@ -56,14 +53,17 @@
     }
 
     #text{
-        bottom: 18%;
-        position: absolute;
         font-size:60px;
         font-style: oblique;
-        left: 28%;
-        color: whitesmoke;
         font-family: "Gill Sans MT";
         color: #000000;
+        text-align: center;
+        position: absolute;
+        left:25%;
+        bottom:35%;
+    }
+    .row{
+        padding: 5px 15px;
     }
     .statuses{
         margin-top: -18%;

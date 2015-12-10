@@ -4,25 +4,25 @@
 
 
     <div class="row">
-        <div class="col-md-2 col-sm-2">
-            <div class="column txt-color-white text-center">
-                <h2><span class="glyphicon glyphicon-info-sign"></span></i> Information</h2>
+        <div class="col-md-12 col-sm-12">
+            <div id="pic2">
+                <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutoriall0005_zpsvtenqufa.png">
             </div>
         </div>
-
-        <div id="pic">
-            <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutorialll0005_zps2rat1dx9.png">
+        <div class="col-md-2 col-sm-2">
+            <div class="column txt-color-white text-center">
+                <h2><span class="glyphicon glyphicon-info-sign"></span> Information</h2>
+            </div>
         </div>
-        <div id="pic1">
-            <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutorial0005_zpsgk1e40og.png">
-        </div>
-        <div id="pic2">
-            <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutoriall0005_zpsvtenqufa.png">
-        </div>
-
         <div class="col-md-10 col-sm-10">
             <div class="column bg-color-darken txt-color-white text-center">
                 <h2><span class="glyphicon glyphicon-shopping-cart"></span> Store</h2>
+                <div id="pic1" class="col-sm-4">
+                    <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutorial0005_zpsgk1e40og.png">
+                </div>
+                <div id="pic" class="col-sm-8">
+                    <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutorialll0005_zps2rat1dx9.png">
+                </div>
             </div>
         </div>
     </div>
@@ -49,28 +49,18 @@
         box-shadow: 0 10px 6px -6px #000000;
     }
     #pic{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        margin-left: 650px;
-        margin-right: auto;
-        z-index: 999;
+        text-align: left;
+        padding-left: 25%;
+        bottom: 90%;
     }
     #pic1{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        margin-left: 1075px;
-        margin-right: auto;
-        z-index: 999;
+        text-align: right;
+        right: -10%;
+        bottom:90%
     }
     #pic2{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        margin-left: 863px;
-        bottom: -175px;
-        margin-right: auto;
-        z-index: -999;
+        height: 50px;
+        text-align: center;
+        padding-left: 18%;
     }
 </style>
