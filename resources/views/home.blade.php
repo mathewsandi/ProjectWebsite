@@ -35,16 +35,17 @@
     <div class="right-column">
         <h4 class="box"><b>Latest Users: </b></h4>
         @foreach ($latestUsers as $latestUser)
-            <div class="text"><li>
+            <div class="text1"><li>
                 {{ $latestUser->username }}
             </li></div>
         @endforeach
         <br>
         <h4 class="box"><b>Recent Online Users:</b></h4>
         @foreach ($recentUsers as $recentUser)
-            <div class="text"><li>
-                {{ $recentUser->username }}
-            </li></div>
+            <div class="text1"><li>
+                {{ $recentUser->username }}:</div></li>
+            <div class="text">{{ $recentUser->updated_at->diffForHumans() }}</div>
+
         @endforeach
         <br>
         <a href="http://paypal.me/Mathew858"> <img src="http://i1206.photobucket.com/albums/bb455/IPenna/donate_zpsxli6ltva.png" style="width: 155px;"></a>
@@ -82,6 +83,9 @@
     }
     .text{
         color: whitesmoke;
+    }
+    .text1{
+        color:#0077fb;
     }
     b{
         color: whitesmoke;

@@ -18,7 +18,7 @@ Route::get('about', function(){
 Route::get('gallery', function(){
 	return view('gallery');
 });
-Route::get('store', 'StoreController@index');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -38,3 +38,6 @@ Route::patch('profile.profile/{id}', 'ProfileController@update');
 
 Route::get('add-friend/{id}', 'ProfileController@getAddFriend');
 Route::get('remove-friend/{id}', 'ProfileController@getRemoveFriend');
+
+Route::get('store', 'StoreController@index');
+Route::get('store/{id}', 'StoreController@show');

@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 use DB;
 use Illuminate\Support\Facades\Request;
 use App\Point;
+use App\Item;
 
 class StoreController extends Controller
 {
@@ -30,7 +31,22 @@ class StoreController extends Controller
 
     public function index()
     {
-        return view('store');
+        return view('store.store');
     }
 
+    public function show($id)
+    {
+        $product = Item::findOrFail($id);
+        $name = $product->item;
+        $info = $product->information;
+        $price = $product->price;
+
+        return view('store.item', compact('info', 'price', 'name'));
+//        $user = User::findOrFail($id);
+//        $articles = $user->articles;
+//        $location = $user->location;
+
+//        return view('profile.profileshow', compact('username', 'email', 'articles', 'user_id', 'user', 'location',
+//            'minecraft', 'twitch', 'youtube', 'about', 'skype'));
+    }
 }
