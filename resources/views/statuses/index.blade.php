@@ -48,7 +48,7 @@
         height: 40%;
         background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsnw4qcdqu.png");
         background-repeat: no-repeat;
-        position: relative;
+        position: absolute;
         text-align: center;
     }
 
@@ -58,9 +58,9 @@
         font-family: "Gill Sans MT";
         color: #000000;
         text-align: center;
-        position: absolute;
-        left:25%;
-        bottom:35%;
+        position: relative;
+        left: -10%;
+        bottom: -20%;
     }
     .row{
         padding: 5px 15px;

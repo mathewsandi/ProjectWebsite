@@ -24,6 +24,52 @@
                     <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutorialll0005_zps2rat1dx9.png">
                 </div>
             </div>
+
+            <div id="store">
+                <div id="form" style="top: 35%;left: 24%;position: relative;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="DXR6JH789VMTG">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                </form></div>
+            </div>
+            <div id="store2">
+                <div id="form" style="top: 35%;left: 24%;position: relative;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="DXR6JH789VMTG">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                </form></div>
+            </div>
+            <div id="store3">
+                <div id="form" style="top: 35%;left: 24%;position: relative;">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="DXR6JH789VMTG">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                    </form></div>
+            </div>
+            <div id="store4">
+                <div id="form" style="top: 35%;left: 24%;position: relative;">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="DXR6JH789VMTG">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                    </form></div>
+            </div>
+            <div id="store5">
+                <div id="form" style="top: 35%;left: 24%;position: relative;">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="DXR6JH789VMTG">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                    </form></div>
+            </div>
         </div>
     </div>
 
@@ -62,5 +108,55 @@
         height: 50px;
         text-align: center;
         padding-left: 18%;
+    }
+    #store{
+        position: absolute;
+        width: 300px;
+        height: 150px;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsd8ub2vn9.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        left: 0%;
+    }
+    #store2{
+        position: absolute;
+        width:300px;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsd8ub2vn9.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height:150px;
+        left:20%;
+    }
+    #store3{
+        position: absolute;
+        width: 300px;
+        height: 150px;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsd8ub2vn9.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        left:40%;
+    }
+    #store4{
+         position: absolute;
+         width:300px;
+         background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsd8ub2vn9.png");
+         background-repeat: no-repeat;
+         background-size: cover;
+         height:150px;
+         left:60%;
+     }
+    #store5{
+        position: absolute;
+        width:300px;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsd8ub2vn9.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height:150px;
+        left:80%;
+    }
+    #form{
+        top: 35%;
+        left: 24%;
+        position: relative;
     }
 </style>
