@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2a1f007-afec-4496-86e7-dc01c8ae2677" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/emails/applicationsend.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/forms/application.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/gallery.blade.php" afterPath="$PROJECT_DIR$/resources/views/gallery.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/header.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/header.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/store/item.blade.php" afterPath="$PROJECT_DIR$/resources/views/store/item.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/store/store.blade.php" afterPath="$PROJECT_DIR$/resources/views/store/store.blade.php" />
     </list>
     <ignored path="laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,8 +57,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5791209">
-              <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.8406593">
+              <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
               <folding>
                 <element signature="e#123#136#0#PHP" expanded="true" />
               </folding>
@@ -150,9 +142,9 @@
         <option value="$PROJECT_DIR$/resources/views/emails/applicationsend.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/SendApplicationRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/forms/application.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/gallery.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
       </list>
     </option>
   </component>
@@ -1115,8 +1107,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5791209">
-          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.8406593">
+          <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
           <folding>
             <element signature="e#123#136#0#PHP" expanded="true" />
           </folding>
