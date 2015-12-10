@@ -41,3 +41,8 @@ Route::get('remove-friend/{id}', 'ProfileController@getRemoveFriend');
 
 Route::get('store', 'StoreController@index');
 Route::get('store/{id}', 'StoreController@show');
+
+Route::get('application', function(){
+    return view('forms.application');
+});
+Route::post('application', 'UserController@apply');

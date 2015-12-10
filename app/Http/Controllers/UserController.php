@@ -8,17 +8,13 @@
 
 namespace app\Http\Controllers;
 
-use App\Article;
 use App\User;
 use Auth;
 use App\Http\Requests;
+use App\Http\Requests\SendApplicationRequest;
 use DB;
-use Illuminate\Support\Facades\Request;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Mail;
+use Validator;
 
 class UserController extends Controller
 {
@@ -36,6 +32,27 @@ class UserController extends Controller
         $not_friends = $not_friends->get();
         $users = User::orderBy('id', 'ASC')->get();
         return view('users', compact('users'))->with('not_friends', $not_friends);
+    }
+
+    public function apply(SendApplicationRequest $request)
+    {
+            Mail::send('emails.applicationsend',
+                array(
+                    'name' => $request->get('name'),
+                    'age' => $request->get('age'),
+                    'email' => $request->get('email'),
+                    'position' => $request->get('position'),
+                    'experience' => $request->get('experience'),
+                    'why' => $request->get('why'),
+                    'what' => $request->get('what'),
+                ), function($message)
+            {
+                $message->from('apply@Sezgi.com', 'Application Form');
+                $message->to('mattjames_95@outlook.com', 'Matt')->subject('Application Form');
+            });
+
+            session()->flash('flash_message', 'Successfully submitted application! You will be contacted by email with a response!');
+            return redirect('/');
     }
 
 

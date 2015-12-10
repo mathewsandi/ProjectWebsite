@@ -45,12 +45,14 @@
 
 <style>
     #myCarousel{
-        /width: 100%;
-        margin-right: auto;
-        margin-left: auto;
+        width: 100%;
+        left:4%;
+        position:absolute;
+        text-align: center;
     }
     .carousel-inner{
-        right:19%;
         left: 19%;
+        text-align: center;
+        position:relative;
     }
 </style>

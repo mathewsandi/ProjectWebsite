@@ -100,7 +100,7 @@
         position: absolute;
         width: 300px;
         height: 150px;
-        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Golem-Pack_zpsek232urw.png");
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Blaze-Pack_zpsunasi0pn.png");
         background-repeat: no-repeat;
         background-size: cover;
         left:40%;
