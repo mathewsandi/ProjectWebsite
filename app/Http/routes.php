@@ -27,7 +27,6 @@ Route::controllers([
 
 Route::resource('articles', 'ArticleController');
 Route::resource('statuses', 'StatusController');
-Route::resource('admin', 'AdminController');
 Route::resource('users', 'UserController@index');
 
 Route::get('profile', 'ProfileController@index');
@@ -46,3 +45,9 @@ Route::get('application', function(){
     return view('forms.application');
 });
 Route::post('application', 'UserController@apply');
+
+Route::get('admin', 'AdminController@index');
+Route::post('roles', 'AdminController@createRole');
+Route::post('permissions', 'AdminController@createPermission');
+Route::post('tags', 'AdminController@createTag');
+Route::post('admin', 'AdminController@editUser');
