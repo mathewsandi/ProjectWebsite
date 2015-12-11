@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Article;
+use App\Role;
 use App\User;
 use Auth;
 use App\Http\Requests;
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Event;
+use App\Permission;
 
 class HomeController extends Controller {
 
@@ -42,11 +44,19 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$articles = Article::latest()->published()->take(5)->get();
-		$latestUsers = User::orderBy('created_at', 'DESC')->take(5)->get();
-		$recentUsers = User::orderBy('updated_at', 'DESC')->take(5)->get();
-
-		return view('home', compact('articles', 'users', 'latestUsers', 'recentUsers'));
+//		$articles = Article::latest()->published()->take(5)->get();
+//		$latestUsers = User::orderBy('created_at', 'DESC')->take(5)->get();
+//		$recentUsers = User::orderBy('updated_at', 'DESC')->take(5)->get();
+//
+//		return view('home', compact('articles', 'users', 'latestUsers', 'recentUsers'));
+//		$permission = 'create-admin';
+//		$role = Role::whereName('admin')->first();
+//		$role->assignPermission($permission);
+		$user = Auth::user();
+		if ($user->can('create-post'))
+		{
+			return 'Hello';
+		};
 	}
 
 }

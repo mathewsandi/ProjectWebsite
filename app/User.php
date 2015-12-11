@@ -82,4 +82,49 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasMany('App\Point');
 	}
+
+	public function roles()
+	{
+		return $this->belongsToMany('App\Role')->withTimestamps();
+	}
+
+	public function hasRole($name)
+	{
+		foreach($this->roles as $role)
+		{
+			if($role->name == $name)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
+	public function assignRole($role)
+	{
+		$this->roles()->attach($role);
+	}
+
+	public function removeRole($role)
+	{
+		$this->roles()->detach($role);
+	}
+
+	public function can($name)
+	{
+		foreach($this->roles->permissions as $permission)
+		{
+			if($permission->name == $name)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
 }
