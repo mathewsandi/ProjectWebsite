@@ -48,7 +48,7 @@ class UserController extends Controller
                 ), function($message)
             {
                 $message->from('apply@Sezgi.com', 'Application Form');
-                $message->to('SezgiOfficial@hotmail.com', 'Matt')->subject('Application Form');
+                $message->to('SezgiOfficial@hotmail.com')->subject('Application Form');
             });
 
             session()->flash('flash_message', 'Successfully submitted application! You will be contacted by email with a response!');

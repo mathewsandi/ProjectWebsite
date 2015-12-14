@@ -10,6 +10,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
+use App\Http\Requests\CreateRoleRequest;
+use App\Http\Requests\CreatePermissionRequest;
+use App\Http\Requests\CreateTagRequest;
+use App\Http\Requests\CreateUserRoleRequest;
 use App\Http\Requests;
 use App\User;
 use App\Role;
@@ -33,7 +37,7 @@ class AdminController extends Controller
         }
     }
 
-    public function createRole(Request $request)
+    public function createRole(CreateRoleRequest $request)
     {
         $role = new Role(Input::all());
         $role->save();
@@ -41,7 +45,7 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    public function createPermission()
+    public function createPermission(CreatePermissionRequest $request)
     {
         $permission = new Permission(Input::all());
         $permission->save();
@@ -49,7 +53,7 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    public function createTag()
+    public function createTag(CreateTagRequest $request)
     {
         $tag = new Tag(Input::all());
         $tag->save();
@@ -57,10 +61,12 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    public function editUser()
+    public function editUser(CreateUserRoleRequest $request)
     {
-        $user = User::where('username' == Input::get('username'))->first();
-        $role = Role::where('name' == Input::get('name'));
+//        $user = Auth::user();
+
+        $user = User::where('username', Input::get('username'))->first();
+        $role = Role::where('name', Input::get('name'))->first();
 
         $user->assignRole($role);
 

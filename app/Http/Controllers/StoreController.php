@@ -31,7 +31,8 @@ class StoreController extends Controller
 
     public function index()
     {
-        return view('store.store');
+        $user = Auth::user();
+        return view('store.store', compact('points', 'user'));
     }
 
     public function show($id)
@@ -43,11 +44,5 @@ class StoreController extends Controller
         $url = $product->url;
 
         return view('store.item', compact('info', 'price', 'name', 'url'));
-//        $user = User::findOrFail($id);
-//        $articles = $user->articles;
-//        $location = $user->location;
-
-//        return view('profile.profileshow', compact('username', 'email', 'articles', 'user_id', 'user', 'location',
-//            'minecraft', 'twitch', 'youtube', 'about', 'skype'));
     }
 }

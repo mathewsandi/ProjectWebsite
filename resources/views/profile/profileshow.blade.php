@@ -11,6 +11,10 @@
                 <img src="http://i1206.photobucket.com/albums/bb455/IPenna/2_zpsbic8cthm.png">
             </div>
             <h1 class="header">{{$user->username}}'s Profile!</h1>
+            @foreach ($roles as $role)
+                <img src="{{$role->display_name}}"/>
+            @endforeach
+            <br><br>
             @if (Auth::check())
 
                 <img src="{{ Gravatar::get($user->email) }}" style="height:150px; width:150px; border-radius:100%;"><br>
@@ -90,12 +94,12 @@
     }
     #pic{
         position: absolute;
-        bottom: 65%;
+        bottom: 61%;
         left: 30%;
     }
     #pic1{
         position: absolute;
-        bottom: 65%;
+        bottom: 61%;
         left: 60%;
     }
 </style>

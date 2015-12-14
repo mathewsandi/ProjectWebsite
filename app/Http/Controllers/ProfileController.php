@@ -49,9 +49,10 @@ class ProfileController extends Controller
         $youtube = $user->youtube;
         $skype = $user->skype;
         $about = $user->about;
+        $roles = $user->roles;
 
         return view('profile.profileshow', compact('username', 'email', 'articles', 'user_id', 'user', 'location',
-            'minecraft', 'twitch', 'youtube', 'about', 'skype'));
+            'minecraft', 'twitch', 'youtube', 'about', 'skype', 'roles'));
     }
 
     public function edit(Request $request)

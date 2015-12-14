@@ -2,16 +2,16 @@
 
 @section('content')
 
-
+<div class="body">
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div id="pic2">
                 <img src="http://i1206.photobucket.com/albums/bb455/IPenna/ploxy-render-skin-tutoriall0005_zpsvtenqufa.png">
             </div>
         </div>
-        <div class="col-md-2 col-sm-2">
-            <div class="column txt-color-white text-center">
-                <h2><span class="glyphicon glyphicon-info-sign"></span> Information</h2>
+        <div class="col-md-2 col-sm-2 points">
+            <div id="points">
+                <p>{{$user->points}}</p>
             </div>
         </div>
         <div class="col-md-10 col-sm-10">
@@ -41,7 +41,7 @@
             </div></a>
         </div>
     </div>
-
+</div>
 
 @stop
 
@@ -123,9 +123,18 @@
         height:150px;
         left:80%;
     }
-    #form{
-        top: 35%;
-        left: 24%;
+    .points{
+        position: absolute;
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpsr1bu6ptu.png");
+        background-repeat: no-repeat;
+        height: 40%;
+        left: 2%;
+    }
+    #points{
         position: relative;
+        font-size: 60px;
+        color: black;
+        left: 20%;
+        top: 25%;
     }
 </style>
