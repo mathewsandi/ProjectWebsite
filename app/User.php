@@ -113,18 +113,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		$this->roles()->detach($role);
 	}
 
-//	public function can($id)
-//	{
-//		foreach($this->roles->permissions as $permission)
-//		{
-//			if($permission->name == $id)
-//			{
-//				return true;
-//			}
-//			else
-//			{
-//				return false;
-//			}
-//		}
-//	}
+	public function can($name)
+	{
+		foreach($this->roles->permissions as $permission)
+		{
+			if($permission->name == $name)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
 }

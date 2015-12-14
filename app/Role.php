@@ -17,6 +17,11 @@ class Role extends Model
         return $this->belongsToMany('App\Permission')->withTimestamps();
     }
 
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
+
     public function assignPermission($permission)
     {
         $this->permissions()->attach($permission);

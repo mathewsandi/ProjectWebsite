@@ -39,7 +39,7 @@ class ArticleController extends Controller
     {
         $user = Auth::user();
 
-        if ($user->isStaff()) {
+        if ($user->hasRole('admin')) {
 
             $tags = \App\Tag::lists('name', 'id');
 
