@@ -39,7 +39,7 @@ class ArticleController extends Controller
     {
         $user = Auth::user();
 
-        if ($user->hasRole('admin')) {
+        if ($user->can('create-post')) {
 
             $tags = \App\Tag::lists('name', 'id');
 

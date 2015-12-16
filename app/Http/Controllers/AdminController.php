@@ -14,6 +14,7 @@ use App\Http\Requests\CreateRoleRequest;
 use App\Http\Requests\CreatePermissionRequest;
 use App\Http\Requests\CreateTagRequest;
 use App\Http\Requests\CreateUserRoleRequest;
+use App\Http\Requests\EditRoleRequest;
 use App\Http\Requests;
 use App\User;
 use App\Role;
@@ -32,7 +33,7 @@ class AdminController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if ($user->hasRole('admin' or 'super_admin')) {
+        if ($user->hasRole('admin')) {
             return view('admin.panel');
         }
     }
@@ -63,13 +64,40 @@ class AdminController extends Controller
 
     public function editUser(CreateUserRoleRequest $request)
     {
-//        $user = Auth::user();
+        $user = Auth::user();
 
-        $user = User::where('username', Input::get('username'))->first();
-        $role = Role::where('name', Input::get('name'))->first();
+        if($user->can('update-user'))
+        {
+            $user = User::where('username', Input::get('username'))->first();
+            $role = Role::where('name', Input::get('name'))->first();
 
-        $user->assignRole($role);
+            $user->assignRole($role);
+            return redirect('/admin');
+        }
+        else
+        {
+            session()->flash('flash_message_important', 'You are not permitted to do that!');
+            return redirect('/admin');
+        }
 
-        return redirect('/admin');
+    }
+    public function editRole(EditRoleRequest $request)
+    {
+        $user = Auth::user();
+
+        if($user->can('update-roles'))
+        {
+            $role = Role::where('name', Input::get('rolename'))->first();
+            $perm = Permission::where('name', Input::get('name'))->first();
+
+            $role->assignPermission($perm);
+            return redirect('/admin');
+        }
+        else
+        {
+            session()->flash('flash_message_important', 'You are not permitted to do that!');
+            return redirect('/admin');
+        }
+
     }
 }

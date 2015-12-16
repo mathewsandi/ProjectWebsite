@@ -39,7 +39,7 @@
         line-height: 24px;
     }
     #posts{
-        position: fixed;
+        position: absolute;
     }
     #text{
         font-size:60px;
@@ -47,8 +47,8 @@
         font-family: "Gill Sans MT";
         color: #000000;
         text-align: center;
-        position: fixed;
+        position: absolute;
         left: 130px;
-        top: 300px;
+        top: 80px;
     }
 </style>

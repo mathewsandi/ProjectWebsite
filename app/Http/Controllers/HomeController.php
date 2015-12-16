@@ -49,9 +49,6 @@ class HomeController extends Controller {
 		$recentUsers = User::orderBy('updated_at', 'DESC')->take(5)->get();
 
 		return view('home', compact('articles', 'users', 'latestUsers', 'recentUsers'));
-//		$permission = 'create-admin';
-//		$role = Role::whereName('admin')->first();
-//		$role->assignPermission($permission);
 
 	}
 

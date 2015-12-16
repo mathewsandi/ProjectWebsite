@@ -90,17 +90,15 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function hasRole($name)
 	{
+		$access = false;
 		foreach($this->roles as $role)
 		{
 			if($role->name == $name)
 			{
-				return true;
-			}
-			else
-			{
-				return false;
+				$access = true;
 			}
 		}
+		return $access;
 	}
 
 	public function assignRole($role)
@@ -115,16 +113,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function can($name)
 	{
-		foreach($this->roles->permissions as $permission)
+		$access = false;
+
+		foreach($this->roles as $role)
 		{
-			if($permission->name == $name)
-			{
-				return true;
+			foreach($role->permissions as $permission) {
+				if ($permission->name == $name) {
+					$access = true;
+				}
 			}
-			else
-			{
-				return false;
-			}
+
 		}
+		return $access;
 	}
 }

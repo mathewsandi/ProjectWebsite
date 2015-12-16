@@ -85,6 +85,27 @@
             </div>
         </div>
     </div>
+    <div class="col-md-12">
+        <div class="col-md-3">
+            <div class="group">
+                {!! Form::open(['action' => 'AdminController@editRole']) !!}
+                <div class="form-group">
+                    {!! Form::label('rolename', 'Role Name:') !!}
+                    {!! Form::text('rolename', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('name', 'Permission Name:') !!}
+                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::submit('Update Permissions', ['class' => 'btn btn-primary form-control']) !!}
+                </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
     <div id="errors">
         @include('errors.list')
     </div>

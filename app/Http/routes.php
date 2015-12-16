@@ -51,3 +51,5 @@ Route::post('roles', 'AdminController@createRole');
 Route::post('permissions', 'AdminController@createPermission');
 Route::post('tags', 'AdminController@createTag');
 Route::post('admin', 'AdminController@editUser');
+Route::post('admin', 'AdminController@editRole');
+
