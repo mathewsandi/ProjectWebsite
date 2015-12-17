@@ -134,7 +134,7 @@
         position: relative;
         font-size: 60px;
         color: black;
-        left: 20%;
+        left: 27.5%;
         top: 25%;
     }
 </style>

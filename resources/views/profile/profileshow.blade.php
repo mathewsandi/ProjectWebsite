@@ -20,12 +20,6 @@
                 <img src="{{ Gravatar::get($user->email) }}" style="height:150px; width:150px; border-radius:100%;"><br>
             @endif
             <br>
-            <div class="form-group">
-                {!! Form::open(['route' => 'messages.index']) !!}
-                {!! Form::submit("Message", ['class' => 'btn btn-primary form-control']) !!}
-                {!! Form::close() !!}
-            </div>
-            <br>
             <b>
             </b>
 

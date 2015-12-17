@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use DB;
 use App\Point;
+use \Cache;
 
 class ArticleController extends Controller
 {
