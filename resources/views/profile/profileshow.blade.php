@@ -94,12 +94,12 @@
     }
     #pic{
         position: absolute;
-        bottom: 61%;
+        bottom: 62%;
         left: 30%;
     }
     #pic1{
         position: absolute;
-        bottom: 61%;
+        bottom: 62%;
         left: 60%;
     }
     .form-group{
