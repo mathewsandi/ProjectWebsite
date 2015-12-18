@@ -39,3 +39,8 @@
         {!! Form::close() !!}
     </div>
 @stop
+<style>
+    .col-md-6{
+        color:whitesmoke;
+    }
+</style>

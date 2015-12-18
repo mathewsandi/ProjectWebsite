@@ -6,6 +6,7 @@
             {!! Session::get('error_message') !!}
         </div>
     @endif
+    <div id="content">
     @if($threads->count() > 0)
         @foreach($threads as $thread)
         <?php $class = $thread->isUnread($currentUserId) ? 'alert-info' : ''; ?>
@@ -19,4 +20,12 @@
     @else
         <p>Sorry, no threads.</p>
     @endif
+    </div>
 @stop
+
+<style>
+    #content{
+        color:whitesmoke;
+        text-align:center;
+    }
+</style>

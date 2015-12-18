@@ -24,6 +24,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/admin"><span class="glyphicon glyphicon-lock"></span> Staff</a></li>
+                    <li><a href="/messages"><span class="glyphicon glyphicon-inbox"></span> Inbox</a></li>
                     <li><a href="/profile"><img src="{{ Gravatar::get(Auth::user()->email) }}" style="height:20px; width:20px; border-radius:50%;"> Profile</a></li>
                     <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>

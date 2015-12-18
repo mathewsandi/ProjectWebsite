@@ -1,6 +1,7 @@
 @extends('master')
 
 @section('content')
+    <div class="body">
 <h1>Create a new message</h1>
 {!! Form::open(['route' => 'messages.store']) !!}
 <div class="col-md-6">
@@ -23,11 +24,18 @@
         @endforeach
     </div>
     @endif
-    
+
     <!-- Submit Form Input -->
     <div class="form-group">
         {!! Form::submit('Submit', ['class' => 'btn btn-primary form-control']) !!}
     </div>
-</div>
+</div></div>
 {!! Form::close() !!}
 @stop
+
+<style>
+    .body{
+        color:whitesmoke;
+        padding: 15px;
+    }
+</style>
