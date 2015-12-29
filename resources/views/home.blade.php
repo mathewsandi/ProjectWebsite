@@ -14,7 +14,7 @@
         <script src="http://snapwidget.com/js/snapwidget.js"></script>
         <iframe src="http://snapwidget.com/in/?u=cGVubmFkc2dufGlufDE3MHwyfDN8fHllc3w1fGZhZGVJbnxvblN0YXJ0fHllc3x5ZXM=&ve=091215" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>    </div>
 
-        <div class="center-column"">
+        <div class="center-column">
             <h4 class="box">
                 <b>
                     Latest News!
@@ -54,7 +54,16 @@
         <a href="http://www.instagram.com/PennaDSGN"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/insta_zps3kusskop.png"></a>
     </div>
 
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+            ga('create', 'UA-71831538-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
 @endsection
 <style>
     .left-column {

@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
         }
 
         if ($e instanceof NotFoundHttpException) {
-            return redirect('/');
+            $e = new NotFoundHttpException($e->getMessage(), $e);
         }
 
         return parent::render($request, $e);
