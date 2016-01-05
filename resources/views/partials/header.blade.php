@@ -8,25 +8,34 @@
                 <ul class="nav navbar-nav">
 
                     <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/public/about">About</a></li>
+                    <li><a href="/about">About</a></li>
                     <li><a href="http://sezgi.bbforum.co/">Forum</a></li>
-                    <li><a href="/public/users">Browse Users</a></li>
-                    <li><a href="/public/application">Apply</a></li>
+                    <li><a href="/users">Browse Users</a></li>
+                    <li><a href="/application">Apply</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">News
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/public/articles">All News</a></li>
-                            <li><a href="/public/articles/create">Create News Article</a></li>
-                            <li><a href="/public/profilearticles">Edit or Delete News Article</a></li>
+                            <li><a href="/articles">All News</a></li>
+                            <li><a href="/articles/create">Create News Article</a></li>
+                            <li><a href="/profilearticles">Edit or Delete News Article</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/public/admin"><span class="glyphicon glyphicon-lock"></span> Staff</a></li>
-                    <li><a href="/public/messages"><span class="glyphicon glyphicon-inbox"></span> Inbox</a></li>
-                    <li><a href="/public/profile"><img src="{{ Gravatar::get(Auth::user()->email) }}" style="height:20px; width:20px; border-radius:50%;"> Profile</a></li>
-                    <li><a href="/public/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    @if(Auth::user()->roles->count() >= 1)
+                    <li><a href="/admin"><span class="glyphicon glyphicon-lock"></span> Staff</a></li>
+                    @endif
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Inbox
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/messages"><span class="glyphicon glyphicon-inbox"></span> Inbox</a></li>
+                            <li><a href="/messages/create">Create Message</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/profile"><img src="{{ Gravatar::get(Auth::user()->email) }}" style="height:20px; width:20px; border-radius:50%;"> Profile</a></li>
+                    <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -42,8 +51,8 @@
                     <li class="active"><a href="/">Home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/public/auth/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                    <li><a href="/public/auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="/auth/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    <li><a href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </div>

@@ -27,6 +27,7 @@ Route::controllers([
 
 /// Resources ///
 Route::resource('articles', 'ArticleController');
+Route::post('articles/{id}', 'ArticleController@reply');
 Route::resource('statuses', 'StatusController');
 Route::resource('users', 'UserController@index');
 

@@ -10,7 +10,7 @@
         @endif
         <br><br>
             <b>
-            </b> <a href="/public/editprofile" class="btn btn-info" role="button">Edit Profile!</a>
+            </b> <a href="/editprofile" class="btn btn-info" role="button">Edit Profile!</a>
         <br><br>
 
         <br>

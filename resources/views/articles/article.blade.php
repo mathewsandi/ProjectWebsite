@@ -20,19 +20,48 @@
         @endunless
     </div></div>
     <br>
+
+    <div id="comment">
+        @foreach ($comments as $comment)
+            {{ $comment->username }}:
+            {{ $comment->body }}<br>
+        @endforeach
+    </div>
+    <br>
+    {!! Form::open(['action' => ['ArticleController@reply', $article->id]]) !!}
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+    <div class="group">
+        {!! Form::text('body', null, ['class' => 'form-control', 'placeholder' => "Post a Comment.."]) !!}
+    </div>
+<br>
+    <div class="group">
+        {!! Form::submit('Add Comment', ['class' => 'btn btn-primary form-control']) !!}
+    </div>
+    {!! Form::close() !!}
+    <br><br>
     @can('update', $article)
     <div class="group">
-    {!! Form::model($article, ['method' => 'GET', 'action' => ['ArticleController@edit', $article->id]]) !!}
-    {!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
-    {!! Form::close() !!}
-    <br>
-    @endcan
-    @can('destroy', $article)
-    {!! Form::model($article, ['method' => 'DELETE', 'action' => ['ArticleController@destroy', $article->id]]) !!}
-    {!! Form::submit('Delete Article', ['class' => 'btn btn-primary form-control']) !!}
-    {!! Form::close() !!}
+        {!! Form::model($article, ['method' => 'GET', 'action' => ['ArticleController@edit', $article->id]]) !!}
+        {!! Form::submit('Edit Article', ['class' => 'btn btn-primary form-control']) !!}
+        {!! Form::close() !!}
+        @endcan
+        @can('destroy', $article)
+        {!! Form::model($article, ['method' => 'DELETE', 'action' => ['ArticleController@destroy', $article->id]]) !!}
+        {!! Form::submit('Delete Article', ['class' => 'btn btn-primary form-control']) !!}
+        {!! Form::close() !!}
     </div>
     @endcan
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-71831538-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 @endsection
 
 <style>
@@ -60,5 +89,9 @@
     }
     .header{
         color: whitesmoke;
+    }
+    #comment{
+        color: whitesmoke;
+        text-align:center;
     }
 </style>

@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Comment;
 use App\User;
 use Gate;
 use App\Tag;
@@ -17,6 +18,7 @@ use App\Http\Requests\ArticleRequest;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use DB;
 use App\Point;
@@ -73,8 +75,9 @@ class ArticleController extends Controller
     {
         $user = Auth::user();
         $article = Article::published()->findOrFail($id);
+        $comments = $article->comments;
 
-        return view('articles.article', compact('article'));
+        return view('articles.article', compact('article', 'comments', 'user'));
     }
 
     public function edit(Request $request, $id)
@@ -99,6 +102,23 @@ class ArticleController extends Controller
         $article = Article::findOrFail($id)->delete();
         session()->flash('flash_message', 'Article Deleted!');
         return redirect('articles');
+    }
+
+    public function reply($id)
+    {
+        $article = Article::findOrFail($id);
+        $user = Auth::user();
+
+        $comment = new Comment();
+        $comment->user_id = $user->id;
+        $comment->body = Input::get('body');
+        $comment->username = $user->username;
+        $comment->save();
+        $article->comments()->attach($comment->id);
+        $article->save();
+
+        return redirect(action('ArticleController@show', [$article->id]));
+
     }
 
 }

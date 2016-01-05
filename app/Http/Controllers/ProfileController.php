@@ -10,6 +10,7 @@ namespace app\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProfileRequest;
 use App\User;
 
 class ProfileController extends Controller
@@ -68,7 +69,7 @@ class ProfileController extends Controller
         }
     }
 
-    public function update(Request $request, $user_id)
+    public function update(ProfileRequest $request, $user_id)
     {
         $user = User::find($user_id);
 

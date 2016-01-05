@@ -52,4 +52,9 @@ class Article extends Model {
     {
         return $this->tags->lists('id');
     }
+
+    public function comments()
+    {
+        return $this->belongsToMany('App\Comment')->withTimestamps();
+    }
 }

@@ -4,9 +4,9 @@
             <div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/"><span class="glyphicon glyphicon-home"></span> </a></li>
-                    <li><a href="/public/statuses"><span class="glyphicon glyphicon-envelope"></span> </a></li>
-                    <li><a href="/public/store"><span class="glyphicon glyphicon-usd"></span> </a></li>
-                    <li><a href="/public/gallery"><span class="glyphicon glyphicon-film"></span> </a></li>
+                    <li><a href="/statuses"><span class="glyphicon glyphicon-envelope"></span> </a></li>
+                    <li><a href="/store"><span class="glyphicon glyphicon-usd"></span> </a></li>
+                    <li><a href="/gallery"><span class="glyphicon glyphicon-film"></span> </a></li>
                 </ul>
             </div>
         </div>

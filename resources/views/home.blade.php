@@ -12,7 +12,18 @@
         <br>
         <h4 class="box"><b>Instagram Feed:</b></h4>
         <script src="http://snapwidget.com/js/snapwidget.js"></script>
-        <iframe src="http://snapwidget.com/in/?u=cGVubmFkc2dufGlufDE3MHwyfDN8fHllc3w1fGZhZGVJbnxvblN0YXJ0fHllc3x5ZXM=&ve=091215" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>    </div>
+        <iframe src="http://snapwidget.com/in/?u=cGVubmFkc2dufGlufDE3MHwyfDN8fHllc3w1fGZhZGVJbnxvblN0YXJ0fHllc3x5ZXM=&ve=091215" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- AD -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-3826193532697061"
+             data-ad-slot="2582655037"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
         <div class="center-column">
             <h4 class="box">

@@ -32,11 +32,6 @@
             <br>
 
             <b>
-                Email:
-            </b> <div class="text">{{$user->email}}</div>
-            <br>
-
-            <b>
                 Location:
             </b> <div class="text">{{ $location }}<br></div>
 
