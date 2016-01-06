@@ -1,6 +1,3 @@
-@extends('master')
-
-@section('content')
     <div id="content">
     {!! Form::model($user, ['method' => 'PATCH', 'action' => ['ProfileController@update', $user_id]]) !!}
     <div class="group">
@@ -47,7 +44,6 @@
     {!! Form::close() !!}
     </div>
     @include('errors.list')
-@endsection
 
 <style>
     #content{
@@ -63,7 +59,7 @@
         font-style: italic;
         line-height: 24px;
         font-weight: bold;
-        color: whitesmoke;
+        color: blue;
     }
 
 </style>

@@ -2,123 +2,75 @@
 
 @section('content')
 
-    <div class="col-md-12">
-        <div class="col-md-3">
-            <div class="group">
-                {!! Form::open(['action' => 'AdminController@createRole']) !!}
-                <div class="form-group">
-                    {!! Form::label('name', 'Role Name:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                </div>
+    <h2 style="text-align: center;">User Records</h2>
+    <p style="text-align:center;">{{$userCount . " records found"}}</p><br>
 
-                <div class="form-group">
-                    {!! Form::label('display_name', 'Display Name:') !!}
-                    {!! Form::text('display_name', null, ['class' => 'form-control']) !!}
-                </div>
+    @if(count($users) != 0)
+        <table class="table" cellspacing="5" id="users">
+            <thead>
+                <tr>
+                    <th>Username:</th>
+                    <th>Email:</th>
+                    <th>Active:</th>
+                    <th>User Since:</th>
+                    <th>Last Login:</th>
+                </tr>
+            </thead>
+        <tbody>
+            @foreach($users as $user)
+                <?php
+                        if($user->active == '1')
+                            $status = "Active";
+                        else
+                            $status = "Disabled";
+                        ?>
+                <tr>
+                    <td>{{$user->username}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$status}}</td>
+                    <td>{{$user->created_at}}</td>
+                    <td>{{$user->updated_at}}</td>
 
-                <div class="form-group">
-                    {!! Form::label('description', 'Role Description:') !!}
-                    {!! Form::text('description', null, ['class' => 'form-control']) !!}
-                </div>
+                    @if($status == "Active")
+                        <td>
+                            {!! Form::open(array('route' => array('admin.destroy', $user->id),
+                            'method' => 'DELETE',
+                            'stye' => 'display:inline')) !!}
 
-                <div class="form-group">
-                    {!! Form::submit('Create Role', ['class' => 'btn btn-primary form-control']) !!}
-                </div>
-                {!! Form::close() !!}
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="group">
-                {!! Form::open(['action' => 'AdminController@createPermission']) !!}
-                <div class="form-group">
-                    {!! Form::label('name', 'Permission Name:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                </div>
+                            {!! Form::button('Disable', array('class'=>'btn btn-danger',
+                            'data-toggle'=>'modal',
+                            'data-target'=>'#confirmDelete',
+                            'data-title'=>'Disable User',
+                            'data-message'=>'Are you sure you want to disable this user account',
+                            'data-btncancel'=>'btn-default',
+                            'data-btnaction'=>'btn-danger',
+                            'data-btntxt'=>'Disable')) !!}
+                        </td>
+                    @else
+                        <td>
+                            {!! Form::open(array('route' => array('admin.update', $user->id),
+                            'method' => 'PATCH',
+                            'stye' => 'display:inline')) !!}
 
-                <div class="form-group">
-                    {!! Form::label('display_name', 'Display Name:') !!}
-                    {!! Form::text('display_name', null, ['class' => 'form-control']) !!}
-                </div>
+                            {!! Form::button('Enable', array('class'=>'btn btn-danger',
+                            'data-toggle'=>'modal',
+                            'data-target'=>'#confirmDelete',
+                            'data-title'=>'Enable User',
+                            'data-message'=>'Are you sure you want to enable this user account',
+                            'data-btncancel'=>'btn-default',
+                            'data-btnaction'=>'btn-success',
+                            'data-btntxt'=>'Enable')) !!}
+                        </td>
+                    @endif
+                </tr>
+            @endforeach
+        </tbody>
+        </table>
+        @include('partials.modal_confirm')
 
-                <div class="form-group">
-                    {!! Form::label('description', 'Permission Description:') !!}
-                    {!! Form::text('description', null, ['class' => 'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::submit('Create Permission', ['class' => 'btn btn-primary form-control']) !!}
-                </div>
-                {!! Form::close() !!}
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="group">
-                {!! Form::open(['action' => 'AdminController@createTag']) !!}
-                <div class="form-group">
-                    {!! Form::label('name', 'Tag Name:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::submit('Create Tag', ['class' => 'btn btn-primary form-control']) !!}
-                </div>
-                {!! Form::close() !!}
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="group">
-                {!! Form::open(['action' => 'AdminController@editUser']) !!}
-                <div class="form-group">
-                    {!! Form::label('username', 'Username:') !!}
-                    {!! Form::text('username', null, ['class' => 'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::label('name', 'Role Name:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::submit('Update User', ['class' => 'btn btn-primary form-control']) !!}
-                </div>
-                {!! Form::close() !!}
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="col-md-3">
-            <div class="group">
-                {!! Form::open(['action' => 'AdminController@editRole']) !!}
-                <div class="form-group">
-                    {!! Form::label('rolename', 'Role Name:') !!}
-                    {!! Form::text('rolename', null, ['class' => 'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::label('name', 'Permission Name:') !!}
-                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::submit('Update Permissions', ['class' => 'btn btn-primary form-control']) !!}
-                </div>
-                {!! Form::close() !!}
-            </div>
-        </div>
-    </div>
-    <div id="errors">
-        @include('errors.list')
-    </div>
+    @else
+        <h3 style="text-align:center;">No user records found.</h3>
+    @endif
 
 
-@endsection
-
-<style>
-    #errors{
-        position: absolute;
-        top:50%;
-        width: 500px;
-        text-align: center;
-        left:35%;
-    }
-</style>
+@stop

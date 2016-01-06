@@ -7,24 +7,30 @@
             <div>
                 <ul class="nav navbar-nav">
 
-                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="http://sezgi.bbforum.co/">Forum</a></li>
                     <li><a href="/users">Browse Users</a></li>
-                    <li><a href="/application">Apply</a></li>
+                    <li><a data-toggle="modal" data-target="#apply_modal" href="/application">Apply</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">News
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/articles">All News</a></li>
                             <li><a href="/articles/create">Create News Article</a></li>
-                            <li><a href="/profilearticles">Edit or Delete News Article</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::user()->roles->count() >= 1)
-                    <li><a href="/admin"><span class="glyphicon glyphicon-lock"></span> Staff</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/admin">Panel</a></li>
+                                <li><a href="/articles/create">Create News Article</a></li>
+                            </ul>
+                        </li>
                     @endif
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Inbox
@@ -34,7 +40,14 @@
                             <li><a href="/messages/create">Create Message</a></li>
                         </ul>
                     </li>
-                    <li><a href="/profile"><img src="{{ Gravatar::get(Auth::user()->email) }}" style="height:20px; width:20px; border-radius:50%;"> Profile</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><img src="{{ Gravatar::get(Auth::user()->email) }}" style="height:20px; width:20px; border-radius:50%;"> Profile
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{action('ProfileController@show', Auth::user()->id)}}"><img src="{{ Gravatar::get(Auth::user()->email) }}" style="height:20px; width:20px; border-radius:50%;"> View Profile</a></li>
+                            <li><a data-toggle="modal" data-target="#user_modal" href="/editprofile">Edit Profile!</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 </ul>
             </div>
@@ -58,6 +71,22 @@
         </div>
     </nav>
 @endif
+
+<div class="modal fade" id="user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="apply_modal" tabindex="-1" role="dialog" aria-labelledby="ApplyModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
 
 <style>
     .navbar-default {

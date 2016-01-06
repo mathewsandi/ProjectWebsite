@@ -33,9 +33,7 @@ Route::resource('users', 'UserController@index');
 
 
 /// Profile ///
-Route::get('profile', 'ProfileController@index');
 Route::get('editprofile', 'ProfileController@edit');
-Route::get('profilearticles', 'ProfileController@articles');
 Route::get('profile/{id}', 'ProfileController@show');
 Route::patch('profile.profile/{id}', 'ProfileController@update');
 
@@ -59,12 +57,7 @@ Route::post('application', 'UserController@apply');
 
 
 /// Admin Panel ///
-Route::get('admin', 'AdminController@index');
-Route::post('roles', 'AdminController@createRole');
-Route::post('permissions', 'AdminController@createPermission');
-Route::post('tags', 'AdminController@createTag');
-Route::post('admin/user', 'AdminController@editUser');
-Route::post('admin/role', 'AdminController@editRole');
+Route::resource('admin', 'AdminController');
 
 /// Messenger ///
 Route::group(['prefix' => 'messages'], function () {

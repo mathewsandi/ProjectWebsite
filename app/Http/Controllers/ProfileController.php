@@ -83,7 +83,7 @@ class ProfileController extends Controller
         $user->about = $request->get('about');
         $user->save();
         session()->flash('flash_message', 'You have updated your profile!');
-        return redirect('/profile');
+        return redirect(action('ProfileController@show', Auth::user()->id));
     }
 
     public function articles()

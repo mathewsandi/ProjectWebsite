@@ -1,6 +1,4 @@
-@extends('master')
-
-@section('content')
+<br>
     <div class="group">
         {!! Form::open(['action' => 'UserController@apply']) !!}
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -55,17 +53,16 @@
         ga('send', 'pageview');
 
     </script>
-@stop
 
 <style>
     .group{
-        margin-right: 300px;
-        margin-left: 300px;
+        margin-right: 100px;
+        margin-left: 100px;
         font-family: Tahoma, Geneva, sans-serif;
         font-size: 14px;
         font-style: italic;
         line-height: 24px;
         font-weight: bold;
-        color: whitesmoke;
+        color: blue;
     }
 </style>

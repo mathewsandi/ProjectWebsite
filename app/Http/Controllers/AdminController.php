@@ -34,7 +34,10 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         if ($user->hasRole('admin')) {
-            return view('admin.panel');
+
+            $userCount = DB::table('users')->count();
+
+            return view('admin.panel')->with('userCount', $userCount)->with('users', User::orderBy('active')->get());
         }
     }
 
@@ -99,5 +102,31 @@ class AdminController extends Controller
             return redirect('/admin');
         }
 
+    }
+
+    public function update($id)
+    {
+        //Grab the user
+        $user = User::find($id);
+
+        //Update the database record
+        $updateStatus = DB::table('users')
+                ->where('id', $id)
+            -update(array('active'=>'1'));
+        session()->flash('flash_message', 'User Enabled!');
+        return redirect('/admin');
+    }
+
+    public function destroy($id)
+    {
+        //Grab the user
+        $user = User::find($id);
+
+        //Update the database record
+        $updatestatus = DB::table('users')
+            ->where('id', $id)
+            -update(array('active'=>'0'));
+        session()->flash('flash_message', 'User Disabled!');
+        return redirect('/admin');
     }
 }
