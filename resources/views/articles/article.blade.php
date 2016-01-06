@@ -21,24 +21,33 @@
     </div></div>
     <br>
 
-    <div id="comment">
+    <div class="dialogbox">
         @foreach ($comments as $comment)
-            {{ $comment->username }}:
-            {{ $comment->body }}<br>
+        <div class="body">
+            <span class="tip tip-down"></span>
+            <div class="message">
+                <span>{{ $comment->username }}: {{ $comment->body }}</span>
+            </div>
+        </div>
         @endforeach
-    </div>
-    <br>
-    {!! Form::open(['action' => ['ArticleController@reply', $article->id]]) !!}
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-    <div class="group">
-        {!! Form::text('body', null, ['class' => 'form-control', 'placeholder' => "Post a Comment.."]) !!}
+            <br>
+            {!! Form::open(['action' => ['ArticleController@reply', $article->id]]) !!}
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+            <div class="grouptest">
+                {!! Form::text('body', null, ['class' => 'form-control', 'placeholder' => "Post a Comment.."]) !!}
+            </div>
+            <br>
+            <div class="grouptest">
+                {!! Form::submit('Add Comment', ['class' => 'btn btn-primary form-control']) !!}
+            </div>
+            {!! Form::close() !!}
+
+
     </div>
-<br>
-    <div class="group">
-        {!! Form::submit('Add Comment', ['class' => 'btn btn-primary form-control']) !!}
-    </div>
-    {!! Form::close() !!}
+
+
     <br><br>
     @can('update', $article)
     <div class="group">
@@ -75,14 +84,15 @@
         color: whitesmoke;
     }
     .group{
-        margin-right: 30%;
-        margin-left: 30%;
+        width:450px;
+        position:relative;
         font-family: Tahoma, Geneva, sans-serif;
         font-size: 14px;
         font-style: italic;
         line-height: 24px;
         font-weight: bold;
         color: whitesmoke;
+        left: 38.2%;
     }
     .text{
         color: whitesmoke;
@@ -93,5 +103,52 @@
     #comment{
         color: whitesmoke;
         text-align:center;
+    }
+    .tip {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        background: transparent;
+        border: 10px solid #ccc;
+    }
+    .tip-down {
+        bottom: -25px;
+        left: 10px;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+    }
+    .dialogbox .body {
+        position: relative;
+        max-width: 300px;
+        height: auto;
+        margin: 20px 10px;
+        padding: 5px;
+        background-color: #DADADA;
+        border-radius: 3px;
+        border: 5px solid #ccc;
+    }
+    .dialogbox{
+        position:relative;
+        left:42%;
+    }
+    .grouptest{
+        font-family: Tahoma, Geneva, sans-serif;
+        font-size: 14px;
+        font-style: italic;
+        line-height: 24px;
+        font-weight: bold;
+        color: whitesmoke;
+        position:relative;
+        left: -72.5px;
+        width: 450px;
+    }
+    .body .message {
+        min-height: 30px;
+        border-radius: 3px;
+        font-family: Arial;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #797979;
     }
 </style>
