@@ -60,4 +60,15 @@ class NewAdminController extends Controller
             return "OK";
         }
     }
+
+    public function updateRoles()
+    {
+        if(Request::ajax()){
+            $user = User::where('username', Input::get('username'))->first();
+            $role = Role::where('name', Input::get('rolename'))->first();
+
+            $user->assignRole($role);
+            return "OK";
+        }
+    }
 }

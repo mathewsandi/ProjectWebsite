@@ -16,6 +16,7 @@ function disable_user(id){
 
     });
 }
+
 function enable_user(id){
     $.get("/admin/enable-user/"+id, function(data) {
         if(data=="OK") {
@@ -24,3 +25,29 @@ function enable_user(id){
         }
     });
 }
+
+function show_form(form_id){
+    $("form").hide();
+
+    $('#'+form_id).show("slow");
+}
+
+$('#roles_update').submit(function(event){
+    e.preventDefault();
+
+    var username = $('#user_name').val();
+    var rolename = $('#role_name').val();
+
+    if(username && rolename)
+    {
+        $.post("/admin/update-roles/", {username: username, rolename: rolename}).done(function(data){
+            if(data=="OK"){
+                window.location.reload(true);
+            }
+        });
+    }else{
+        alert("Please input data into both fields!")
+    }
+});
+
+

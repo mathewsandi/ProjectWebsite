@@ -69,6 +69,7 @@ Route::group(['prefix' => 'messages'], function () {
 Route::get('admin', 'NewAdminController@getIndex');
 Route::get('admin/disable-user/{id}', 'NewAdminController@disableUser');
 Route::get('admin/enable-user/{id}', 'NewAdminController@enableUser');
+Route::post('admin/update-roles', 'NewAdminController@updateRoles');
 
 Route::filter('ajax_check', function(){
 	if(\Illuminate\Support\Facades\Request::ajax())
