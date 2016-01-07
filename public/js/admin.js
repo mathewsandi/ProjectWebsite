@@ -8,7 +8,7 @@ $(function() {
 });
 
 function disable_user(id){
-    $.get("/newadmin/disable-user/"+id, function(data){
+    $.get("/admin/disable-user/"+id, function(data){
         if(data=="OK"){
             $(""+id).addClass("enable");
             window.location.reload(true);
@@ -17,7 +17,7 @@ function disable_user(id){
     });
 }
 function enable_user(id){
-    $.get("/newadmin/enable-user/"+id, function(data) {
+    $.get("/admin/enable-user/"+id, function(data) {
         if(data=="OK") {
             $("" + id).addClass("disable");
             window.location.reload(true);

@@ -66,9 +66,9 @@ Route::group(['prefix' => 'messages'], function () {
 
 
 /// PRACTICING AJAX ///
-Route::get('newadmin', 'NewAdminController@getIndex');
-Route::get('newadmin/disable-user/{id}', 'NewAdminController@disableUser');
-Route::get('newadmin/enable-user/{id}', 'NewAdminController@enableUser');
+Route::get('admin', 'NewAdminController@getIndex');
+Route::get('admin/disable-user/{id}', 'NewAdminController@disableUser');
+Route::get('admin/enable-user/{id}', 'NewAdminController@enableUser');
 
 Route::filter('ajax_check', function(){
 	if(\Illuminate\Support\Facades\Request::ajax())
