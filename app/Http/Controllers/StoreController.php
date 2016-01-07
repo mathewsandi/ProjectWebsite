@@ -31,8 +31,14 @@ class StoreController extends Controller
 
     public function index()
     {
-        $user = Auth::user();
-        return view('store.store', compact('points', 'user'));
+        if(Auth::user()->active == "1") {
+            $user = Auth::user();
+            return view('store.store', compact('points', 'user'));
+        }
+        else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     public function show($id)

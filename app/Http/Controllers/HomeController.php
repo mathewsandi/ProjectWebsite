@@ -44,14 +44,18 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-
-		$updated_at = Carbon::now();
-		$articles = Article::latest()->published()->take(5)->get();
-		$latestUsers = User::orderBy('created_at', 'DESC')->take(5)->get();
-		$recentUsers = User::orderBy('updated_at', 'DESC')->take(5)->get();
-		Auth::user()->updated_at = $updated_at;
-		Auth::user()->save();
-		return view('home', compact('articles', 'users', 'latestUsers', 'recentUsers'));
+		if(Auth::user()->active == "1"){
+			$updated_at = Carbon::now();
+			$articles = Article::latest()->published()->take(5)->get();
+			$latestUsers = User::orderBy('created_at', 'DESC')->take(5)->get();
+			$recentUsers = User::orderBy('updated_at', 'DESC')->take(5)->get();
+			Auth::user()->updated_at = $updated_at;
+			Auth::user()->save();
+			return view('home', compact('articles', 'users', 'latestUsers', 'recentUsers'));
+		}else{
+			session()->flash('flash_message_important', 'Your account has been disabled!');
+			return view('disable.disabled');
+		}
 
 	}
 

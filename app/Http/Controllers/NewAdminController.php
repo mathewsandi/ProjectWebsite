@@ -28,13 +28,18 @@ class NewAdminController extends Controller
 {
     public $restful = true;
 
-    public function getIndex(){
+    public function getIndex()
+    {
         $user = Auth::user();
         if ($user->hasRole('admin')) {
+            if(Auth::user()->active == "1") {
+                $userCount = DB::table('users')->count();
 
-            $userCount = DB::table('users')->count();
-
-            return view('newadmin.admin')->with('userCount', $userCount)->with('users', User::orderBy('active')->get());
+                return view('newadmin.admin')->with('userCount', $userCount)->with('users', User::orderBy('active')->get());
+            }else{
+                session()->flash('flash_message_important', 'Your account has been disabled!');
+                return view('disable.disabled');
+            }
         }
     }
 

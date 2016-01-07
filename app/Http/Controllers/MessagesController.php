@@ -21,6 +21,7 @@ class MessagesController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->active == "1"){
         $currentUserId = Auth::user()->id;
 
         // All threads, ignore deleted/archived participants
@@ -33,6 +34,10 @@ class MessagesController extends Controller
         //$threads = Thread::forUserWithNewMessages($currentUserId)->latest('updated_at')->get();
 
         return view('messenger.index', compact('threads', 'currentUserId'));
+        }else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     /**
@@ -43,6 +48,7 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
+        if(Auth::user()->active == "1"){
         try {
             $thread = Thread::findOrFail($id);
         } catch (ModelNotFoundException $e) {
@@ -63,6 +69,11 @@ class MessagesController extends Controller
         $user = User::findOrFail($id);
 
         return view('messenger.show', compact('thread', 'users', 'user'));
+        }else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
+
     }
 
     /**
@@ -72,9 +83,14 @@ class MessagesController extends Controller
      */
     public function create()
     {
+        if(Auth::user()->active == "1"){
         $users = User::where('id', '!=', Auth::id())->get();
 
         return view('messenger.create', compact('users'));
+        }else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     /**

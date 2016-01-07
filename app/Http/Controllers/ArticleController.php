@@ -34,9 +34,14 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::latest()->published()->simplePaginate(6);
+        if(Auth::user()->active == "1"){
+            $articles = Article::latest()->published()->simplePaginate(6);
 
-        return view('articles.articles', compact('articles'));
+            return view('articles.articles', compact('articles'));
+        }else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     public function create()
@@ -74,19 +79,29 @@ class ArticleController extends Controller
 
     public function show($id)
     {
+        if(Auth::user()->active == "1"){
         $user = Auth::user();
         $article = Article::published()->findOrFail($id);
         $comments = $article->comments;
 
         return view('articles.article', compact('article', 'comments', 'user'));
+        }else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     public function edit(Request $request, $id)
     {
+        if(Auth::user()->active == "1"){
         $article = Article::published()->findOrFail($id);
         $tags = Tag::lists('name', 'id');
 
         return view ('articles.articleedit', compact('article', 'user_id', 'user', 'tags'));
+        }else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     public function update($id, ArticleRequest $request)

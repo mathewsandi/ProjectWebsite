@@ -22,50 +22,65 @@ class ProfileController extends Controller
 
     public function index(Request $request)
     {
-        If (Auth::check()) {
-            $username = Auth::user()->username;
-            $email = Auth::user()->email;
-            $articlecount = Auth::user()->articles()->count();
-            $location = Auth::user()->location;
-            $minecraft = Auth::user()->minecraft;
-            $twitch = Auth::user()->twitch;
-            $youtube = Auth::user()->youtube;
-            $skype = Auth::user()->skype;
-            $about = Auth::user()->about;
-            $user_id = Auth::id();
-            $user = Auth::user();
+        if(Auth::user()->active == "1") {
+            If (Auth::check()) {
+                $username = Auth::user()->username;
+                $email = Auth::user()->email;
+                $articlecount = Auth::user()->articles()->count();
+                $location = Auth::user()->location;
+                $minecraft = Auth::user()->minecraft;
+                $twitch = Auth::user()->twitch;
+                $youtube = Auth::user()->youtube;
+                $skype = Auth::user()->skype;
+                $about = Auth::user()->about;
+                $user_id = Auth::id();
+                $user = Auth::user();
 
-            return view('profile.profile', compact('username', 'email', 'articlecount', 'user_id', 'user', 'location',
-                'minecraft', 'twitch', 'youtube', 'about', 'skype'));
+                return view('profile.profile', compact('username', 'email', 'articlecount', 'user_id', 'user', 'location',
+                    'minecraft', 'twitch', 'youtube', 'about', 'skype'));
+            }
+        }else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
         }
     }
 
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        $articles = $user->articles;
-        $location = $user->location;
-        $minecraft = $user->minecraft;
-        $twitch = $user->twitch;
-        $youtube = $user->youtube;
-        $skype = $user->skype;
-        $about = $user->about;
-        $roles = $user->roles;
+        if(Auth::user()->active == "1") {
+            $user = User::findOrFail($id);
+            $articles = $user->articles;
+            $location = $user->location;
+            $minecraft = $user->minecraft;
+            $twitch = $user->twitch;
+            $youtube = $user->youtube;
+            $skype = $user->skype;
+            $about = $user->about;
+            $roles = $user->roles;
 
-        return view('profile.profileshow', compact('username', 'email', 'articles', 'user_id', 'user', 'location',
-            'minecraft', 'twitch', 'youtube', 'about', 'skype', 'roles'));
+            return view('profile.profileshow', compact('username', 'email', 'articles', 'user_id', 'user', 'location',
+                'minecraft', 'twitch', 'youtube', 'about', 'skype', 'roles'));
+        }else {
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     public function edit(Request $request)
     {
-        If (Auth::check()) {
-            $username = Auth::user()->username;
-            $email = Auth::user()->email;
-            $articlecount = Auth::user()->articles()->count();
-            $user_id = Auth::id();
-            $user = Auth::user();
+        if(Auth::user()->active == "1") {
+            If (Auth::check()) {
+                $username = Auth::user()->username;
+                $email = Auth::user()->email;
+                $articlecount = Auth::user()->articles()->count();
+                $user_id = Auth::id();
+                $user = Auth::user();
 
-            return view('profile.editprofile', compact('username', 'email', 'articlecount', 'user_id', 'user'));
+                return view('profile.editprofile', compact('username', 'email', 'articlecount', 'user_id', 'user'));
+            }
+        }else {
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
         }
     }
 
@@ -88,13 +103,18 @@ class ProfileController extends Controller
 
     public function articles()
     {
-        if (Auth::check()) {
-            $username = Auth::user()->username;
-            $email = Auth::user()->email;
-            $user_id = Auth::id();
-            $articles = Auth::user()->articles;
+        if(Auth::user()->active == "1") {
+            if (Auth::check()) {
+                $username = Auth::user()->username;
+                $email = Auth::user()->email;
+                $user_id = Auth::id();
+                $articles = Auth::user()->articles;
 
-            return view('profile.profilearticles', compact('username', 'email', 'user_id', 'articles'));
+                return view('profile.profilearticles', compact('username', 'email', 'user_id', 'articles'));
+            }
+        }else {
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
         }
     }
 

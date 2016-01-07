@@ -34,10 +34,14 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         if ($user->hasRole('admin')) {
+            if(Auth::user()->active == "1") {
+                $userCount = DB::table('users')->count();
 
-            $userCount = DB::table('users')->count();
-
-            return view('admin.panel')->with('userCount', $userCount)->with('users', User::orderBy('active')->get());
+                return view('admin.panel')->with('userCount', $userCount)->with('users', User::orderBy('active')->get());
+            }else{
+                session()->flash('flash_message_important', 'Your account has been disabled!');
+                return view('disable.disabled');
+            }
         }
     }
 

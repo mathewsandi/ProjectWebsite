@@ -28,16 +28,22 @@ class StatusController extends Controller
 
     public function index()
     {
-        $friends = array();
-        $status_count = Auth::user()->statuses->count();
-        $user_id = Auth::user()->id;
-        $friend_id = friends_user::where('user_id', $user_id)->get(['friend_id']);
-        foreach($friend_id as $value){
-            array_push($friends, $value->friend_id);
-        }
-        $statuses = Status::whereIn('user_id', $friends)->orWhere('user_id', $user_id)->orderBy('created_at', 'DESC')->Paginate(10);
+        if(Auth::user()->active == "1") {
+            $friends = array();
+            $status_count = Auth::user()->statuses->count();
+            $user_id = Auth::user()->id;
+            $friend_id = friends_user::where('user_id', $user_id)->get(['friend_id']);
+            foreach ($friend_id as $value) {
+                array_push($friends, $value->friend_id);
+            }
+            $statuses = Status::whereIn('user_id', $friends)->orWhere('user_id', $user_id)->orderBy('created_at', 'DESC')->Paginate(10);
 
-        return view('statuses.index', compact('statuses', 'status_count', 'friend_id'));
+            return view('statuses.index', compact('statuses', 'status_count', 'friend_id'));
+        }
+        else{
+            session()->flash('flash_message_important', 'Your account has been disabled!');
+            return view('disable.disabled');
+        }
     }
 
     public function store(StatusRequest $request)
