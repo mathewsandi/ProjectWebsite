@@ -55,9 +55,6 @@ Route::get('application', function(){
 Route::post('application', 'UserController@apply');
 
 
-/// Admin Panel ///
-Route::resource('admin', 'AdminController');
-
 /// Messenger ///
 Route::group(['prefix' => 'messages'], function () {
 	Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
@@ -65,4 +62,17 @@ Route::group(['prefix' => 'messages'], function () {
 	Route::post('chat', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
 	Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
 	Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+});
+
+
+/// PRACTICING AJAX ///
+Route::get('newadmin', 'NewAdminController@getIndex');
+Route::get('newadmin/disable-user/{id}', 'NewAdminController@disableUser');
+Route::get('newadmin/enable-user/{id}', 'NewAdminController@enableUser');
+
+Route::filter('ajax_check', function(){
+	if(\Illuminate\Support\Facades\Request::ajax())
+	{
+		return true;
+	}
 });

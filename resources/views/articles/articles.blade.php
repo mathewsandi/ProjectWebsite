@@ -6,7 +6,7 @@
         <h1 class="header">Articles</h1>
 
         <hr></hr>
-        
+
 
         <div class="col-lg-12" id="search-results">
             @foreach($articles as $article)
