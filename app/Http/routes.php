@@ -24,7 +24,6 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-
 /// Resources ///
 Route::resource('articles', 'ArticleController');
 Route::post('articles/{id}', 'ArticleController@reply');

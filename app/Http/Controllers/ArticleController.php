@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Request;
 use DB;
 use App\Point;
 use \Cache;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {

@@ -28,7 +28,7 @@
                                 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/admin">Panel</a></li>
-                                <li><a href="/articles/create">Create News Article</a></li>
+                                <li><a href="/articles/create">COMING SOON</a></li>
                             </ul>
                         </li>
                     @endif
