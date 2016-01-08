@@ -65,8 +65,13 @@ class NewAdminController extends Controller
             $user = User::where('username', Input::get('username'))->first();
             $role = Role::where('name', Input::get('rolename'))->first();
 
-            $user->assignRole($role);
-            return "OK";
+            if($user || $role  === null)
+            {
+                return "DENIED";
+            }else{
+                $user->assignRole($role);
+                return "OK";
+            }
         }
     }
 
@@ -97,7 +102,12 @@ class NewAdminController extends Controller
             $perm = Permission::where('name', Input::get('perm'))->first();
             $role = Role::where('name', Input::get('role'))->first();
 
-            $role->assignPermission($perm);
+            if($perm || $role === null){
+                return "DENIED";
+            }else{
+                $role->assignPermission($perm);
+                return "OK";
+            }
         }
     }
 

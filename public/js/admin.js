@@ -43,7 +43,11 @@
                     method: 'POST',
                     data: {username: username, rolename: rolename},
                     success: function(data){
-                        alert("You have updated the roles!")
+                        if(data=="DENIED"){
+                            alert("You entered an invalid user or role!")
+                        }else{
+                            alert("You have updated the roles!")
+                        }
                     }
                 });
             } else {
@@ -111,7 +115,11 @@
                     method: 'POST',
                     data: {perm: perm, role: role},
                     success: function(data){
-                        alert("You have updated the permissions!")
+                        if(data=="DENIED"){
+                            alert("You have entered an invalid permission or role!")
+                        }else{
+                            alert("You have updated the permissions!")
+                        }
                     }
                 });
             }else{
