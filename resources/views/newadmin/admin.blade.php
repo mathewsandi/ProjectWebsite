@@ -60,23 +60,43 @@
             <ul class="admin-controls">
                 <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('roles_update');"/> Update User Roles</li>
                 <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('roles_create');"/> Create a Role</li>
+                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('perm_create');"/> Create a Permission</li>
                 <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('roles_perms');"/> Update Roles Permissions</li>
-                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('perms_create');"/> Create a Permission</li>
+                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('tag_create');"/> Create a Tag</li>
             </ul>
             </section>
 
             <section id="form_section">
 
                 <form id="roles_update" class="controls" style="display:none">
-                    <input id="user_name" type="text" name="user" placeholder="Enter a user name" value=""/>
-                    <input id="role_name" type="text" name="role" placeholder="Enter a role name" value=""/>
+                    <input id="username" type="text" name="username" placeholder="Enter a user name" value=""/>
+                    <input id="rolename" type="text" name="rolename" placeholder="Enter a role name" value=""/>
                     <button name="submit">Update User</button>
                 </form>
 
-                <form id="edit_task" class="todo" style="display:none">
-                    <input id="edit_task_id" type="hidden" value=""/>
-                    <input id="edit_task_title" type="text" name="title" value=""/>
-                    <button name="submit">Edit Task</button>
+                <form id="roles_create" class="todo" style="display:none">
+                    <input id="role_name" type="text" name="rolename" placeholder="Enter a role name" value=""/>
+                    <input id="display_name" type="text" name="display_name" placeholder="Enter a display name" value=""/>
+                    <input id="description" type="text" name="description" placeholder="Enter a description" value=""/>
+                    <button name="submit">Create Role</button>
+                </form>
+
+                <form id="perm_create" class="todo" style="display:none">
+                    <input id="perm_name" type="text" name="perm_name" placeholder="Enter a permission name" value=""/>
+                    <input id="display" type="text" name="display" placeholder="Enter a display name" value=""/>
+                    <input id="desc" type="text" name="desc" placeholder="Enter a description" value=""/>
+                    <button name="submit">Create Permission</button>
+                </form>
+
+                <form id="roles_perms" class="todo" style="display:none">
+                    <input id="role" type="text" name="role" placeholder="Enter a role name" value=""/>
+                    <input id="perm" type="text" name="perm" placeholder="Enter a permission name" value=""/>
+                    <button name="submit">Update Permissions</button>
+                </form>
+
+                <form id="tag_create" class="todo" style="display:none">
+                    <input id="tag_name" type="text" name="tag_name" placeholder="Enter a tag name" value=""/>
+                    <button name="submit">Create Tag</button>
                 </form>
 
             </section>

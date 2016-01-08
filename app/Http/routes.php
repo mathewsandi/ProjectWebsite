@@ -69,7 +69,11 @@ Route::group(['prefix' => 'messages'], function () {
 Route::get('admin', 'NewAdminController@getIndex');
 Route::get('admin/disable-user/{id}', 'NewAdminController@disableUser');
 Route::get('admin/enable-user/{id}', 'NewAdminController@enableUser');
-Route::post('admin/update-roles', 'NewAdminController@updateRoles');
+Route::post('admin/update-role', array('uses' => 'NewAdminController@updateRoles'));
+Route::post('admin/create-role', array('uses' => 'NewAdminController@createRoles'));
+Route::post('admin/create-perm', array('uses' => 'NewAdminController@createPerm'));
+Route::post('admin/update-perm', array('uses' => 'NewAdminController@updatePerm'));
+Route::post('admin/create-tag', array('uses' => 'NewAdminController@createTag'));
 
 Route::filter('ajax_check', function(){
 	if(\Illuminate\Support\Facades\Request::ajax())

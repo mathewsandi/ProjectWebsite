@@ -26,8 +26,6 @@ use DB;
 
 class NewAdminController extends Controller
 {
-    public $restful = true;
-
     public function getIndex()
     {
         $user = Auth::user();
@@ -69,6 +67,45 @@ class NewAdminController extends Controller
 
             $user->assignRole($role);
             return "OK";
+        }
+    }
+
+    public function createRoles(){
+        if(Request::ajax()){
+
+            $role = new Role();
+            $role->name = Input::get('rolename');
+            $role->display_name = Input::get('display_name');
+            $role->description = Input::get('description');
+            $role->save();
+            return "OK";
+        }
+    }
+
+    public function createPerm(){
+        if(Request::ajax()){
+            $perm = new Permission();
+            $perm->name = Input::get('perm_name');
+            $perm->display_name = Input::get('display');
+            $perm->description = Input::get('desc');
+            $perm->save();
+        }
+    }
+
+    public function updatePerm(){
+        if(Request::ajax()){
+            $perm = Permission::where('name', Input::get('perm'))->first();
+            $role = Role::where('name', Input::get('role'))->first();
+
+            $role->assignPermission($perm);
+        }
+    }
+
+    public function createTag(){
+        if(Request::ajax()){
+            $tag = new Tag();
+            $tag->name = Input::get('tag');
+            $tag->save();
         }
     }
 }
