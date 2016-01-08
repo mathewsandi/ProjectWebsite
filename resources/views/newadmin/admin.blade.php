@@ -39,11 +39,11 @@
 
                                 @if($status == "Active")
                                     <td class="disable">
-                                        <a href="#" id="disable_user_id" onClick="disable_user('{{$user->id}}');" class="btn btn-danger">Disable</a>
+                                        <a href="#" id="disable_user_id" onClick="disable_user('{{$user->id}}');" class="btn btn-success enabled">Enabled</a>
                                     </td>
                                 @else
                                     <td class="enable">
-                                        <a href="#" id="enable_user_id" onClick="enable_user('{{$user->id}}');" class="btn btn-success">Enable</a>
+                                        <a href="#" id="enable_user_id" onClick="enable_user('{{$user->id}}');" class="btn btn-danger dis">Disabled</a>
                                     </td>
                                 @endif
                             </tr>

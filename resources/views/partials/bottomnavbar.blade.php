@@ -6,7 +6,7 @@
                     <li><a href="/"><span class="glyphicon glyphicon-home"></span> </a></li>
                     <li><a href="/statuses"><span class="glyphicon glyphicon-envelope"></span> </a></li>
                     <li><a href="/store"><span class="glyphicon glyphicon-usd"></span> </a></li>
-                    <li><a href="/gallery"><span class="glyphicon glyphicon-film"></span> </a></li>
+                    <li><a href="/videos"><span class="glyphicon glyphicon-film"></span> </a></li>
                 </ul>
             </div>
         </div>

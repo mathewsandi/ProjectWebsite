@@ -14,10 +14,17 @@ Route::get('/', 'HomeController@index');
 Route::get('about', function(){
 	return view('about');
 });
-Route::get('gallery', function(){
-	return view('gallery');
+
+Route::get('videos', function(){
+	return view('videos.videos');
 });
 
+Route::filter('ajax_check', function(){
+	if(\Illuminate\Support\Facades\Request::ajax())
+	{
+		return true;
+	}
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -65,7 +72,7 @@ Route::group(['prefix' => 'messages'], function () {
 });
 
 
-/// PRACTICING AJAX ///
+/// Admin Panel ///
 Route::get('admin', 'NewAdminController@getIndex');
 Route::get('admin/disable-user/{id}', 'NewAdminController@disableUser');
 Route::get('admin/enable-user/{id}', 'NewAdminController@enableUser');
@@ -74,10 +81,3 @@ Route::post('admin/create-role', array('uses' => 'NewAdminController@createRoles
 Route::post('admin/create-perm', array('uses' => 'NewAdminController@createPerm'));
 Route::post('admin/update-perm', array('uses' => 'NewAdminController@updatePerm'));
 Route::post('admin/create-tag', array('uses' => 'NewAdminController@createTag'));
-
-Route::filter('ajax_check', function(){
-	if(\Illuminate\Support\Facades\Request::ajax())
-	{
-		return true;
-	}
-});

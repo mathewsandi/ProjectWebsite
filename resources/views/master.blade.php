@@ -23,7 +23,7 @@
     </header>
 
     <div class="container">
-        <a href="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpshndu8ykr.png" target="_blank"><img src="http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-2_zpshndu8ykr.png" border="0" alt=" photo Untitled-2_zpshndu8ykr.png"/></a>
+        <img src="/img/logo.PNG" border="0" alt=" photo Untitled-2_zpshndu8ykr.png"/>
     </div>
 
 
