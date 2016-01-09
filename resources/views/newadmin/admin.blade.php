@@ -7,7 +7,8 @@
     </head>
 
     @section('content')
-        <div class="col-md-8">
+        <div id="container">
+        <div class="col-md-8 text">
             <h2 style="text-align: center;">User Records</h2>
             <p style="text-align:  center;">{{$userCount . " records found"}}</p><br>
             <div class="container">
@@ -55,14 +56,14 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 text">
             <section id="data_section" class="controls">
             <ul class="admin-controls">
-                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('roles_update');"/> Update User Roles</li>
-                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('roles_create');"/> Create a Role</li>
-                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('perm_create');"/> Create a Permission</li>
-                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('roles_perms');"/> Update Roles Permissions</li>
-                <li><img src="http://www.psdgraphics.com/file/blue-add-button.jpg" width="94px" onClick="show_form('tag_create');"/> Create a Tag</li>
+                <li><img src="http://i1206.photobucket.com/albums/bb455/IPenna/drop-down-button_zpsosoiry2l.png" onClick="show_form('roles_update');"/> Update User Roles</li>
+                <li><img src="http://i1206.photobucket.com/albums/bb455/IPenna/drop-down-button_zpsosoiry2l.png" onClick="show_form('roles_create');"/> Create a Role</li>
+                <li><img src="http://i1206.photobucket.com/albums/bb455/IPenna/drop-down-button_zpsosoiry2l.png" onClick="show_form('perm_create');"/> Create a Permission</li>
+                <li><img src="http://i1206.photobucket.com/albums/bb455/IPenna/drop-down-button_zpsosoiry2l.png" onClick="show_form('roles_perms');"/> Update Roles Permissions</li>
+                <li><img src="http://i1206.photobucket.com/albums/bb455/IPenna/drop-down-button_zpsosoiry2l.png" onClick="show_form('tag_create');"/> Create a Tag</li>
             </ul>
             </section>
 
@@ -101,9 +102,17 @@
 
             </section>
         </div>
-
+    </div>
     @stop
 
     <script src="http://code.jquery.com/jquery-latest.min.js"type="text/javascript"></script>
     <script src="/js/admin.js"type="text/javascript"></script>
 </html>
+<Style>
+    #container{
+        color: whitesmoke;
+    }
+    #users{
+        color:whitesmoke;
+    }
+</Style>

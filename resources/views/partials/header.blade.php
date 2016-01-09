@@ -7,7 +7,7 @@
             <div>
                 <ul class="nav navbar-nav">
 
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/sezgicraft">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="http://sezgi.bbforum.co/">Forum</a></li>
                     <li><a href="/users">Browse Users</a></li>
