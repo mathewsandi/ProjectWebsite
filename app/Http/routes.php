@@ -11,7 +11,10 @@
 |
 */
 Route::get('/', function(){
-    return view('home.home');
+	return view('home.home');
+});
+Route::get('/home', function(){
+	return view('home.home');
 });
 Route::get('sezgicraft', 'HomeController@index');
 
@@ -89,3 +92,13 @@ Route::post('admin/create-role', array('uses' => 'NewAdminController@createRoles
 Route::post('admin/create-perm', array('uses' => 'NewAdminController@createPerm'));
 Route::post('admin/update-perm', array('uses' => 'NewAdminController@updatePerm'));
 Route::post('admin/create-tag', array('uses' => 'NewAdminController@createTag'));
+
+
+
+
+
+
+/// GAMES ///
+route::get('/games', function(){
+	return view('games.home');
+});
