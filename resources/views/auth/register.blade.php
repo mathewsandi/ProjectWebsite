@@ -40,6 +40,7 @@
             <button type="submit">Register</button>
         </div>
     </form>
+
     @include('errors.list')
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
