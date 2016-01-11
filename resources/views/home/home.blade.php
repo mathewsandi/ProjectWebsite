@@ -35,7 +35,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="/sezgicraft">SezgiCraft</a></li>
                         <li><a href="#">SezgiHosting - COMING SOON</a></li>
-                        <li><a href="#">SezgiGames - COMING SOON</a></li>
+                        <li><a href="/games">SezgiGames - COMING SOON</a></li>
                     </ul>
                 </li>
             </ul>
