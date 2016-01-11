@@ -58,6 +58,11 @@
 
 <script src="/js/gamesHome.js"type="text/javascript"></script>
 <style>
+    .body{
+        background-image: url("http://i1206.photobucket.com/albums/bb455/IPenna/Untitled-1_zpsdu4q76kk.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .logo{
         text-align: center;
     }
