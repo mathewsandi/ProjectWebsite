@@ -19,8 +19,11 @@ Route::get('about', function(){
 	return view('about');
 });
 
+Route::get('videos/form', function(){
+	return view('videos.form');
+});
 Route::get('videos', function(){
-	return view('videos.videos');
+    return view('videos.videos');
 });
 
 Route::filter('ajax_check', function(){
@@ -64,6 +67,7 @@ Route::get('application', function(){
     return view('forms.application');
 });
 Route::post('application', 'UserController@apply');
+Route::post('videos', 'UserController@video');
 
 
 /// Messenger ///

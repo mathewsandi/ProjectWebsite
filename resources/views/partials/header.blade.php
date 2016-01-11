@@ -11,7 +11,14 @@
                     <li><a href="/about">About</a></li>
                     <li><a href="http://sezgi.bbforum.co/">Forum</a></li>
                     <li><a href="/users">Browse Users</a></li>
-                    <li><a data-toggle="modal" data-target="#apply_modal" href="/application">Apply</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Forms
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a data-toggle="modal" data-target="#apply_modal" href="/application">Apply</a></li>
+                            <li><a data-toggle="modal" data-target="#video_modal" href="/videos/form">Videos</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">News
                             <span class="caret"></span></a>
@@ -73,6 +80,14 @@
 @endif
 
 <div class="modal fade" id="user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="video_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
 

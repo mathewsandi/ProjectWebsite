@@ -12,6 +12,7 @@ use App\User;
 use Auth;
 use App\Http\Requests;
 use App\Http\Requests\SendApplicationRequest;
+use App\Http\Requests\SendVideoRequest;
 use DB;
 use Illuminate\Support\Facades\Mail;
 use Validator;
@@ -57,8 +58,25 @@ class UserController extends Controller
             });
 
             session()->flash('flash_message', 'Successfully submitted application! You will be contacted by email with a response!');
-            return redirect('/');
+            return redirect('/sezgicraft');
     }
 
+    public function video(SendVideoRequest $request)
+    {
+        Mail::send('emails.video',
+            array(
+                'name' => $request->get('name'),
+                'email' => $request->get('email'),
+                'link' => $request->get('link'),
+                'desc' => $request->get('desc')
+            ), function($message)
+            {
+                $message->from('video@Sezgi.com', 'Video Form');
+                $message->to('SezgiOfficial@hotmail.com')->subject('Application Form');
+            });
+
+        session()->flash('flash_message', 'Successfully submitted application! You will be contacted by email with a response!');
+        return redirect('/sezgicraft');
+    }
 
 }
