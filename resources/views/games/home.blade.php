@@ -34,17 +34,17 @@
                 <p>This is just a simple browser mafia game that I (Matt) have developed. I created this to try and recreate
                 the old mafia browser games I used to play.</p>
             </li>
-            <li class="#">
+            <li class="game">
                 <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Profile-Picture_zpsmzvha3gc.png" />
                 <h3>Image Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             </li>
-            <li class="#">
+            <li class="game">
                 <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Profile-Picture_zpsmzvha3gc.png" />
                 <h3>Image Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             </li>
-            <li class="#">
+            <li class="game">
                 <img src="http://i1206.photobucket.com/albums/bb455/IPenna/Profile-Picture_zpsmzvha3gc.png" />
                 <h3>Image Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
