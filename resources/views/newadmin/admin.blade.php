@@ -9,7 +9,7 @@
     @section('content')
         <div id="container">
         <div class="col-md-8 text">
-            <h2 style="text-align: center;">User Records</h2>
+            <h2 style="text-align: center; color:whitesmoke;">User Records</h2>
             <p style="text-align:  center;">{{$userCount . " records found"}}</p><br>
             <div class="container">
                 @if(count($users) != 0)
@@ -109,10 +109,16 @@
     <script src="/js/admin.js"type="text/javascript"></script>
 </html>
 <Style>
-    #container{
-        color: whitesmoke;
+    h2{
+        color:whitesmoke;
+    }
+    p{
+        color:whitesmoke;
     }
     #users{
+        color:whitesmoke;
+    }
+    .admin-controls{
         color:whitesmoke;
     }
 </Style>
