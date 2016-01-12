@@ -11,11 +11,6 @@ namespace app\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
-use App\Http\Requests\CreateRoleRequest;
-use App\Http\Requests\CreatePermissionRequest;
-use App\Http\Requests\CreateTagRequest;
-use App\Http\Requests\CreateUserRoleRequest;
-use App\Http\Requests\EditRoleRequest;
 use App\Http\Requests;
 use App\User;
 use App\Role;
@@ -32,8 +27,14 @@ class NewAdminController extends Controller
         if ($user->hasRole('admin')) {
             if(Auth::user()->active == "1") {
                 $userCount = DB::table('users')->count();
+                
+                $query = Input::get('q');
 
-                return view('newadmin.admin')->with('userCount', $userCount)->with('users', User::orderBy('active')->get());
+                $users = $query
+                    ? User::where('username', 'LIKE', "%$query%")->get()
+                    : User::orderBy('active')->get();
+
+                return view('newadmin.admin', compact('userCount', 'users'));
             }else{
                 session()->flash('flash_message_important', 'Your account has been disabled!');
                 return view('disable.disabled');

@@ -19,14 +19,27 @@ Route::get('/home', function(){
 Route::get('sezgicraft', 'HomeController@index');
 
 Route::get('about', function(){
-	return view('about');
+	if(Auth::user()->active == "1")
+	{
+		return view('about');
+	}else{
+		session()->flash('flash_message_important', 'Your account has been disabled!');
+		return view('disable.disabled');
+	}
 });
 
 Route::get('videos/form', function(){
 	return view('videos.form');
 });
 Route::get('videos', function(){
-    return view('videos.videos');
+	if(Auth::user()->active == "1")
+	{
+		return view('videos.videos');
+	}else{
+		session()->flash('flash_message_important', 'Your account has been disabled!');
+		return view('disable.disabled');
+	}
+
 });
 
 Route::filter('ajax_check', function(){
@@ -100,5 +113,11 @@ Route::post('admin/create-tag', array('uses' => 'NewAdminController@createTag'))
 
 /// GAMES ///
 route::get('/games', function(){
-	return view('games.home');
+	if(Auth::user()->active == "1")
+	{
+		return view('games.home');
+	}else{
+		session()->flash('flash_message_important', 'Your account has been disabled!');
+		return view('disable.disabled');
+	}
 });

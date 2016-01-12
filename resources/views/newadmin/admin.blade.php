@@ -10,8 +10,14 @@
         <div id="container">
         <div class="col-md-8 text">
             <h2 style="text-align: center; color:whitesmoke;">User Records</h2>
-            <p style="text-align:  center;">{{$userCount . " records found"}}</p><br>
+            <p style="text-align: center;">{{$userCount . " records found"}}
+            </p><br>
             <div class="container">
+                <p>
+                    {!! Form::open(['method' => 'GET']) !!}
+                    {!! Form::input('search', 'q', null, ['placeholder' => 'Search a user..']) !!}
+                    {!! Form::close() !!}
+                </p>
                 @if(count($users) != 0)
                     <table class="table" cellspacing="5" id="users">
                         <thead>
@@ -119,6 +125,6 @@
         color:whitesmoke;
     }
     .admin-controls{
-        color:whitesmoke;
+        co
     }
 </Style>
