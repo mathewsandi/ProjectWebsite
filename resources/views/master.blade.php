@@ -43,7 +43,6 @@
     </div>
 
 
-    <script> $('div.alert').not('.alert-important').delay(3000).slideUp(300);</script>
     <script> $(".nav a").on("click", function(){
             $(".nav").find(".active").removeClass("active");
             $(this).parent().addClass("active");
