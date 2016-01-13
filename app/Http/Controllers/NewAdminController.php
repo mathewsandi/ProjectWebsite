@@ -27,11 +27,11 @@ class NewAdminController extends Controller
         if ($user->hasRole('admin')) {
             if(Auth::user()->active == "1") {
                 $userCount = DB::table('users')->count();
-                
+
                 $query = Input::get('q');
 
                 $users = $query
-                    ? User::where('username', 'LIKE', "%$query%")->get()
+                    ? User::where('username', 'LIKE', "%$query%")->orderBy('active')->get()
                     : User::orderBy('active')->get();
 
                 return view('newadmin.admin', compact('userCount', 'users'));
