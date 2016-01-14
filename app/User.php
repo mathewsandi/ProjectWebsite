@@ -128,4 +128,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $access;
 	}
 
+	public function picture(){
+		return $this->hasOne('App\Picture');
+	}
+
 }

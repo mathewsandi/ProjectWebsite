@@ -107,10 +107,6 @@ Route::post('admin/update-perm', array('uses' => 'NewAdminController@updatePerm'
 Route::post('admin/create-tag', array('uses' => 'NewAdminController@createTag'));
 
 
-
-
-
-
 /// GAMES ///
 route::get('/games', function(){
 	if(Auth::user()->active == "1")
@@ -121,3 +117,6 @@ route::get('/games', function(){
 		return view('disable.disabled');
 	}
 });
+
+
+Route::resource('picture', 'PictureController');
