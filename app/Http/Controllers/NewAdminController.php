@@ -37,7 +37,7 @@ class NewAdminController extends Controller
 
                 $users = $query
                     ? User::where('username', 'LIKE', "%$query%")->orderBy('active')->get()
-                    : User::orderBy('active')->get();
+                    : User::orderBy('active')->simplePaginate(10);
 
                 return view('newadmin.admin', compact('userCount', 'users'));
             }else{

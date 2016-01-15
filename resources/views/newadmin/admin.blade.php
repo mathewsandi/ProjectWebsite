@@ -55,6 +55,7 @@
                                 @endif
                             </tr>
                         @endforeach
+                        {!! $users->render() !!}
                         </tbody>
                     </table>
                 @else
