@@ -4,7 +4,7 @@
 $(document).ready(function() {
     $('.game').mouseenter(function(){
         $(this).animate({
-            opacity: 1,
+            opacity: 1
         }, "slow");
     });
     $('.game').mouseleave(function(){
